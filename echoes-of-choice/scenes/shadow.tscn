@@ -1,0 +1,70 @@
+[gd_scene load_steps=13 format=3 uid="uid://6uri7glpone2"]
+
+[ext_resource type="Script" path="res://scenes/shadow_walk.gd" id="1_okx0b"]
+[ext_resource type="Texture2D" uid="uid://br05oqxwdwo0u" path="res://Heroes/shadown_tirar_Espada_0001.png" id="2_j3opl"]
+[ext_resource type="Texture2D" uid="uid://cxb8q23qhci3l" path="res://Heroes/shadown_tirar_Espada_0002.png" id="3_cts2c"]
+[ext_resource type="Texture2D" uid="uid://dg8elt60raef1" path="res://Heroes/shadown_tirar_Espada_0003.png" id="4_f6fbn"]
+[ext_resource type="Texture2D" uid="uid://d00cpw5hpnktw" path="res://Heroes/shadown_tirar_Espada_0004.png" id="5_ri8w0"]
+[ext_resource type="Texture2D" uid="uid://be42nb7r0pg7j" path="res://Heroes/shadown_tirar_Espada_0005.png" id="6_mjgom"]
+[ext_resource type="Texture2D" uid="uid://k5v3x35u7y88" path="res://Heroes/shadown_tirar_Espada_0006.png" id="7_ows63"]
+[ext_resource type="Texture2D" uid="uid://dpygwxl7rjqhj" path="res://Heroes/shadown_tirar_Espada_0007.png" id="8_8mnun"]
+[ext_resource type="Texture2D" uid="uid://yl7j7l5gwa4v" path="res://Heroes/shadown_tirar_Espada_0008.png" id="9_vpkve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p15ks"]
+size = Vector2(24.5, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vue37"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j3opl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cts2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f6fbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ri8w0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mjgom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ows63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8mnun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vpkve")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0486s"]
+animations = []
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(56, 10)
+script = ExtResource("1_okx0b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-56, -10)
+shape = SubResource("RectangleShape2D_p15ks")
+
+[node name="shadow_sword" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(-50, -10)
+sprite_frames = SubResource("SpriteFrames_vue37")
+frame = 5
+frame_progress = 0.581928
+
+[node name="shadow_attack" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(-223, 48)
+sprite_frames = SubResource("SpriteFrames_0486s")
+animation = &""
