@@ -1,30 +1,29 @@
-[gd_scene load_steps=45 format=4 uid="uid://cmge0i482vgxv"]
+[gd_scene load_steps=44 format=4 uid="uid://cmge0i482vgxv"]
 
-[ext_resource type="PackedScene" uid="uid://6uri7glpone2" path="res://scenes/shadow.tscn" id="1_0pj24"]
-[ext_resource type="Texture2D" uid="uid://k5sy7n11vvqf" path="res://Environment/Green Woods/Assets/Tiles/Tiles.png" id="1_flnqu"]
-[ext_resource type="Texture2D" uid="uid://d2foniqq1lho6" path="res://Enemy/goblin/goblin-humano.png" id="2_73avu"]
-[ext_resource type="Texture2D" uid="uid://c0hvyhnab7i3s" path="res://Environment/Deep Cave - WIP/Assets/Tiles.png" id="2_mo16k"]
-[ext_resource type="Texture2D" uid="uid://i51jiclbswxp" path="res://Enemy/goblin/goblin-humano_0002.png" id="3_ndq6j"]
-[ext_resource type="Texture2D" uid="uid://cja8dyib452py" path="res://Environment/Green Woods/Assets/Props/Trees/Tree_Model_01/Size_02.png" id="3_wl76q"]
-[ext_resource type="Texture2D" uid="uid://dcwljsltupj7r" path="res://Environment/Green Woods/Assets/Props/Trees/Tree_Model_01/Size_03.png" id="4_4514p"]
-[ext_resource type="Texture2D" uid="uid://bfkap84m41lnl" path="res://Enemy/goblin/goblin-humano_0003.png" id="4_kxxsc"]
-[ext_resource type="Texture2D" uid="uid://4ifx8bu711ox" path="res://Enemy/goblin/goblin-humano_0004.png" id="5_lgesv"]
-[ext_resource type="Texture2D" uid="uid://bxub57oi68mac" path="res://Environment/Green Woods/Assets/Props/Trees/Tree_Model_01/Size_04.png" id="5_td3n2"]
-[ext_resource type="Texture2D" uid="uid://us88wqo7dvyj" path="res://Environment/Green Woods/Assets/Props/Trees/Tree_Model_01/Size_05.png" id="6_lklys"]
-[ext_resource type="Texture2D" uid="uid://cdlqpee333fvl" path="res://Environment/Green Woods/Assets/Props/Vegetation/Vegetation_01.png" id="7_ji2fo"]
-[ext_resource type="Texture2D" uid="uid://cwwiircs8mtdq" path="res://Enemy/goblin/goblin-humano_0001.png" id="12_o2b4k"]
+[ext_resource type="Texture2D" uid="uid://k5sy7n11vvqf" path="res://art/Environment/Green Woods/Assets/Tiles/Tiles.png" id="1_flnqu"]
+[ext_resource type="Texture2D" uid="uid://d2foniqq1lho6" path="res://art/Enemy/goblin/goblin-humano.png" id="2_73avu"]
+[ext_resource type="Texture2D" uid="uid://c0hvyhnab7i3s" path="res://art/Environment/Deep Cave - WIP/Assets/Tiles.png" id="2_mo16k"]
+[ext_resource type="Texture2D" uid="uid://i51jiclbswxp" path="res://art/Enemy/goblin/goblin-humano_0002.png" id="3_ndq6j"]
+[ext_resource type="Texture2D" uid="uid://cja8dyib452py" path="res://art/Environment/Green Woods/Assets/Props/Trees/Tree_Model_01/Size_02.png" id="3_wl76q"]
+[ext_resource type="Texture2D" uid="uid://dcwljsltupj7r" path="res://art/Environment/Green Woods/Assets/Props/Trees/Tree_Model_01/Size_03.png" id="4_4514p"]
+[ext_resource type="Texture2D" uid="uid://bfkap84m41lnl" path="res://art/Enemy/goblin/goblin-humano_0003.png" id="4_kxxsc"]
+[ext_resource type="Texture2D" uid="uid://4ifx8bu711ox" path="res://art/Enemy/goblin/goblin-humano_0004.png" id="5_lgesv"]
+[ext_resource type="Texture2D" uid="uid://bxub57oi68mac" path="res://art/Environment/Green Woods/Assets/Props/Trees/Tree_Model_01/Size_04.png" id="5_td3n2"]
+[ext_resource type="Texture2D" uid="uid://us88wqo7dvyj" path="res://art/Environment/Green Woods/Assets/Props/Trees/Tree_Model_01/Size_05.png" id="6_lklys"]
+[ext_resource type="Texture2D" uid="uid://cdlqpee333fvl" path="res://art/Environment/Green Woods/Assets/Props/Vegetation/Vegetation_01.png" id="7_ji2fo"]
+[ext_resource type="Texture2D" uid="uid://cwwiircs8mtdq" path="res://art/Enemy/goblin/goblin-humano_0001.png" id="12_o2b4k"]
 [ext_resource type="Texture2D" uid="uid://blnx54h0450tv" path="res://words/animação_hit_0001.png" id="13_ygfdm"]
 [ext_resource type="Texture2D" uid="uid://dus77wdlo7wow" path="res://words/animação_hit_0002.png" id="14_ptylh"]
 [ext_resource type="Texture2D" uid="uid://bactr4ug51sbc" path="res://words/animação_hit_0003.png" id="15_hynti"]
 [ext_resource type="Texture2D" uid="uid://dvdx3yudevdxn" path="res://words/animação_hit_0004.png" id="16_tcwx5"]
 [ext_resource type="Texture2D" uid="uid://c4rc05acqfkdm" path="res://words/animação_hit_0005.png" id="17_t0fnf"]
 [ext_resource type="Texture2D" uid="uid://beq6vyhbohutw" path="res://words/animação_hit_0006.png" id="18_16ic2"]
-[ext_resource type="Texture2D" uid="uid://coklvgt0wfwhm" path="res://Heroes/prefeito_0001.png" id="19_dym1q"]
-[ext_resource type="Texture2D" uid="uid://hmplsioyk3bc" path="res://Heroes/prefeito_0002.png" id="20_ostln"]
-[ext_resource type="Texture2D" uid="uid://b7p2yym2dgu2p" path="res://Heroes/prefeito_0003.png" id="21_s2wup"]
-[ext_resource type="Texture2D" uid="uid://cnjosoftjvwfm" path="res://Heroes/prefeito_0004.png" id="22_xbr5h"]
-[ext_resource type="Texture2D" uid="uid://cmshcrlc6p3ya" path="res://Heroes/prefeito_0005.png" id="23_6ri17"]
-[ext_resource type="Texture2D" uid="uid://qotituih5it4" path="res://Heroes/prefeito_0006.png" id="24_tuaw6"]
+[ext_resource type="Texture2D" uid="uid://coklvgt0wfwhm" path="res://art/Heroes/prefeito_0001.png" id="19_dym1q"]
+[ext_resource type="Texture2D" uid="uid://hmplsioyk3bc" path="res://art/Heroes/prefeito_0002.png" id="20_ostln"]
+[ext_resource type="Texture2D" uid="uid://b7p2yym2dgu2p" path="res://art/Heroes/prefeito_0003.png" id="21_s2wup"]
+[ext_resource type="Texture2D" uid="uid://cnjosoftjvwfm" path="res://art/Heroes/prefeito_0004.png" id="22_xbr5h"]
+[ext_resource type="Texture2D" uid="uid://cmshcrlc6p3ya" path="res://art/Heroes/prefeito_0005.png" id="23_6ri17"]
+[ext_resource type="Texture2D" uid="uid://qotituih5it4" path="res://art/Heroes/prefeito_0006.png" id="24_tuaw6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rb3cr"]
 texture = ExtResource("1_flnqu")
@@ -1729,9 +1728,6 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Node2D" parent="." instance=ExtResource("1_0pj24")]
-position = Vector2(284, 94)
-
 [node name="Layer1" type="TileMapLayer" parent="."]
 use_parent_material = true
 position = Vector2(-1, -25)
@@ -1742,7 +1738,7 @@ rendering_quadrant_size = 32
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 
 [node name="goblin_run_animation" type="AnimatedSprite2D" parent="."]
-position = Vector2(156, 157)
+position = Vector2(157, 157)
 scale = Vector2(0.859375, 1.04687)
 sprite_frames = SubResource("SpriteFrames_166gr")
 frame = 2
