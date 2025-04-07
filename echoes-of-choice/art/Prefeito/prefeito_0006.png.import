@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coklvgt0wfwhm"
-path="res://.godot/imported/prefeito_0001.png-8158cdbc8e99eff89577cee7a9186747.ctex"
+uid="uid://qotituih5it4"
+path="res://.godot/imported/prefeito_0006.png-94e77cd7bfe3a82ee79048d86ebd1f05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Heroes/prefeito_0001.png"
-dest_files=["res://.godot/imported/prefeito_0001.png-8158cdbc8e99eff89577cee7a9186747.ctex"]
+source_file="res://art/Prefeito/prefeito_0006.png"
+dest_files=["res://.godot/imported/prefeito_0006.png-94e77cd7bfe3a82ee79048d86ebd1f05.ctex"]
 
 [params]
 
