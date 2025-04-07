@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ct3x43edxa2u7"
-path="res://.godot/imported/WorkTable - Tools.png-8c6d3ea56ca7e797e2a5364e045e30ac.ctex"
+path="res://.godot/imported/WorkTable - Tools.png-6dcd006b911ed56a14abaa0daac8f12f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Social/WorkTable - Tools.png"
-dest_files=["res://.godot/imported/WorkTable - Tools.png-8c6d3ea56ca7e797e2a5364e045e30ac.ctex"]
+source_file="res://art/Social/WorkTable - Tools.png"
+dest_files=["res://.godot/imported/WorkTable - Tools.png-6dcd006b911ed56a14abaa0daac8f12f.ctex"]
 
 [params]
 
