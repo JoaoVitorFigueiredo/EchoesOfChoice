@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://cmge0i482vgxv"]
+[gd_scene load_steps=45 format=4 uid="uid://cmge0i482vgxv"]
 
 [ext_resource type="Texture2D" uid="uid://k5sy7n11vvqf" path="res://art/Environment/Green Woods/Assets/Tiles/Tiles.png" id="1_flnqu"]
 [ext_resource type="Texture2D" uid="uid://d2foniqq1lho6" path="res://art/Enemy/goblin/goblin-humano.png" id="2_73avu"]
@@ -12,12 +12,19 @@
 [ext_resource type="Texture2D" uid="uid://us88wqo7dvyj" path="res://art/Environment/Green Woods/Assets/Props/Trees/Tree_Model_01/Size_05.png" id="6_lklys"]
 [ext_resource type="Texture2D" uid="uid://cdlqpee333fvl" path="res://art/Environment/Green Woods/Assets/Props/Vegetation/Vegetation_01.png" id="7_ji2fo"]
 [ext_resource type="Texture2D" uid="uid://cwwiircs8mtdq" path="res://art/Enemy/goblin/goblin-humano_0001.png" id="12_o2b4k"]
-[ext_resource type="Texture2D" uid="uid://coklvgt0wfwhm" path="res://art/Heroes/prefeito_0001.png" id="19_dym1q"]
-[ext_resource type="Texture2D" uid="uid://hmplsioyk3bc" path="res://art/Heroes/prefeito_0002.png" id="20_ostln"]
-[ext_resource type="Texture2D" uid="uid://b7p2yym2dgu2p" path="res://art/Heroes/prefeito_0003.png" id="21_s2wup"]
-[ext_resource type="Texture2D" uid="uid://cnjosoftjvwfm" path="res://art/Heroes/prefeito_0004.png" id="22_xbr5h"]
-[ext_resource type="Texture2D" uid="uid://cmshcrlc6p3ya" path="res://art/Heroes/prefeito_0005.png" id="23_6ri17"]
-[ext_resource type="Texture2D" uid="uid://qotituih5it4" path="res://art/Heroes/prefeito_0006.png" id="24_tuaw6"]
+[ext_resource type="Texture2D" uid="uid://b4luph60t4w7y" path="res://art/shadow/new_attack/shadow_attack_0002.png" id="13_6en4b"]
+[ext_resource type="Texture2D" uid="uid://co55fneji7o4k" path="res://art/shadow/new_attack/shadow_attack_0001.png" id="14_eptp4"]
+[ext_resource type="Texture2D" uid="uid://tg6487thvvtt" path="res://art/shadow/new_attack/shadow_attack_0003.png" id="15_urtfy"]
+[ext_resource type="Texture2D" uid="uid://x4rr8q7u7k3f" path="res://art/shadow/new_attack/shadow_attack_0004.png" id="16_w57vj"]
+[ext_resource type="Texture2D" uid="uid://cm1k70p8h6eix" path="res://art/shadow/new_attack/shadow_attack_0005.png" id="17_ttqlu"]
+[ext_resource type="Texture2D" uid="uid://cknualxg15iio" path="res://art/shadow/new_attack/shadow_attack_0006.png" id="18_xwjfp"]
+[ext_resource type="Texture2D" uid="uid://uqom6q4brlk7" path="res://art/shadow/new_attack/shadow_attack_0007.png" id="19_1rxfd"]
+[ext_resource type="Texture2D" uid="uid://coklvgt0wfwhm" path="res://art/Prefeito/prefeito_0001.png" id="19_dym1q"]
+[ext_resource type="Texture2D" uid="uid://hmplsioyk3bc" path="res://art/Prefeito/prefeito_0002.png" id="20_ostln"]
+[ext_resource type="Texture2D" uid="uid://b7p2yym2dgu2p" path="res://art/Prefeito/prefeito_0003.png" id="21_s2wup"]
+[ext_resource type="Texture2D" uid="uid://cnjosoftjvwfm" path="res://art/Prefeito/prefeito_0004.png" id="22_xbr5h"]
+[ext_resource type="Texture2D" uid="uid://cmshcrlc6p3ya" path="res://art/Prefeito/prefeito_0005.png" id="23_6ri17"]
+[ext_resource type="Texture2D" uid="uid://qotituih5it4" path="res://art/Prefeito/prefeito_0006.png" id="24_tuaw6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rb3cr"]
 texture = ExtResource("1_flnqu")
@@ -1671,23 +1678,26 @@ animations = [{
 [sub_resource type="SpriteFrames" id="SpriteFrames_6fb1l"]
 animations = [{
 "frames": [{
-"duration": 0.2,
-"texture": null
+"duration": 0.5,
+"texture": ExtResource("13_6en4b")
 }, {
-"duration": 0.2,
-"texture": null
+"duration": 0.5,
+"texture": ExtResource("14_eptp4")
 }, {
-"duration": 0.3,
-"texture": null
+"duration": 0.5,
+"texture": ExtResource("15_urtfy")
 }, {
-"duration": 0.3,
-"texture": null
+"duration": 0.5,
+"texture": ExtResource("16_w57vj")
 }, {
-"duration": 0.3,
-"texture": null
+"duration": 0.5,
+"texture": ExtResource("17_ttqlu")
 }, {
-"duration": 3.0,
-"texture": null
+"duration": 0.5,
+"texture": ExtResource("18_xwjfp")
+}, {
+"duration": 0.5,
+"texture": ExtResource("19_1rxfd")
 }],
 "loop": true,
 "name": &"default",
@@ -1739,10 +1749,11 @@ frame = 2
 frame_progress = 0.105341
 
 [node name="hit_animation" type="AnimatedSprite2D" parent="."]
-position = Vector2(272, 177)
-scale = Vector2(1.23438, 0.859375)
+position = Vector2(223, 181)
+scale = Vector2(0.570315, 0.554688)
 sprite_frames = SubResource("SpriteFrames_6fb1l")
-frame_progress = 0.471543
+frame = 5
+frame_progress = 0.957601
 
 [node name="prefeito" type="AnimatedSprite2D" parent="."]
 position = Vector2(184, 157)

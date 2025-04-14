@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://br05oqxwdwo0u"
-path="res://.godot/imported/shadown_tirar_Espada_0001.png-3815c959706722e8cb2f9d8152def498.ctex"
+path="res://.godot/imported/shadown_tirar_Espada_0001.png-cbd77f83f324ab6b58d2a8d340aeeb5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Heroes/shadown_tirar_Espada_0001.png"
-dest_files=["res://.godot/imported/shadown_tirar_Espada_0001.png-3815c959706722e8cb2f9d8152def498.ctex"]
+source_file="res://art/Heroes/shadow/shadown_tirar_Espada_0001.png"
+dest_files=["res://.godot/imported/shadown_tirar_Espada_0001.png-cbd77f83f324ab6b58d2a8d340aeeb5e.ctex"]
 
 [params]
 
