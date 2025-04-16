@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yl7j7l5gwa4v"
-path="res://.godot/imported/shadown_tirar_Espada_0008.png-45202cfb87e236278bfcde8111a3f711.ctex"
+uid="uid://dg8elt60raef1"
+path="res://.godot/imported/shadown_tirar_Espada_0003.png-da0491451761c27b1dbd607e69adba45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/Heroes/shadown_tirar_Espada_0008.png"
-dest_files=["res://.godot/imported/shadown_tirar_Espada_0008.png-45202cfb87e236278bfcde8111a3f711.ctex"]
+source_file="res://art/Heroes/shadow/shadown_tirar_Espada_0003.png"
+dest_files=["res://.godot/imported/shadown_tirar_Espada_0003.png-da0491451761c27b1dbd607e69adba45.ctex"]
 
 [params]
 
