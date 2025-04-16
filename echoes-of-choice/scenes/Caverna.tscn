@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://euyqkxjxosr8"]
+[gd_scene load_steps=4 format=3 uid="uid://euyqkxjxosr8"]
+
+[ext_resource type="Texture2D" uid="uid://fq48a157vu06" path="res://art/Environment/StardewValley - Cave/PC Computer - Stardew Valley - The Mines Skull Cavern.png" id="1_adpe7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k1tgl"]
+texture = ExtResource("1_adpe7")
+9:22/size_in_atlas = Vector2i(4, 4)
+9:22/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_65nmf"]
+sources/0 = SubResource("TileSetAtlasSource_k1tgl")
 
 [node name="Caverna" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_65nmf")
+format = 2
+layer_0/name = "Paredes"
+layer_0/tile_data = PackedInt32Array(-196593, 589824, 22, -196589, 589824, 22, -196585, 589824, 22, -196581, 589824, 22, -196577, 589824, 22, -196573, 589824, 22, -196569, 589824, 22, -196565, 589824, 22, -196561, 589824, 22, -196557, 589824, 22, -196597, 589824, 22, -196601, 589824, 22, -196605, 589824, 22)
+layer_1/name = "Chão"
