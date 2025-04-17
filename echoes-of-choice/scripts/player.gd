@@ -1,7 +1,15 @@
 extends CharacterBody2D
 
 var curr_dir = "none"
-var speed =100
+var speed =200
+var is_chased = false
+var n_chased = 0
+
+func _process(delta):
+	if is_chased and n_chased == 0:
+		is_chased = false
+	elif !is_chased and n_chased > 0:
+		is_chased = true
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -10,26 +18,26 @@ func player_movement(delta):
 	if Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_up"):
 		curr_dir = "right"
 		play_animation(1)
-		velocity.x = speed
-		velocity.y = -speed
+		velocity.x = speed*.75
+		velocity.y = -speed*.75
 		
 	elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_down"):
 		curr_dir = "right"
 		play_animation(1)
-		velocity.x = speed
-		velocity.y = speed
+		velocity.x = speed*.75
+		velocity.y = speed*.75
 	
 	elif Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_down"):
 		curr_dir = "left"
 		play_animation(1)
-		velocity.x = -speed
-		velocity.y = speed
+		velocity.x = -speed*.75
+		velocity.y = speed*.75
 		
 	elif Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_up"):
 		curr_dir = "left"
 		play_animation(1)
-		velocity.x = -speed
-		velocity.y = -speed
+		velocity.x = -speed*.75
+		velocity.y = -speed*.75
 		
 	elif Input.is_action_pressed("ui_right"):
 		curr_dir = "right"
