@@ -25,14 +25,18 @@ func _ready():
 func _physics_process(delta):
 	match action:
 		0:
-			path_follow.progress += speed * delta
-			global_position = path_follow.global_position
+			velocity.x = 0
+			velocity.y = 0
+			#path_follow.progress += speed * delta
+			#global_position = path_follow.global_position
 
 		1:
 			chase()
 
 		2:
-			return_to_path(delta)
+			velocity.x = 0
+			velocity.y = 0
+			#return_to_path(delta)
 	
 	move_and_slide()
 	
@@ -116,12 +120,12 @@ func chase():
 	velocity = direction * speed  # or whatever speed
 	play_animation(1)
 
-func return_to_path(delta):
-	var target_pos = path.position
-	var dir = (target_pos - position).normalized()
-	velocity = dir * speed
+#func return_to_path(delta):
+#	var target_pos = path.position
+#	var dir = (target_pos - position).normalized()
+#	velocity = dir * speed
 
-	# Once close enough, resume patrolling
-	if global_position.distance_to(target_pos) < 5:
-		action = 0
-	play_animation(1)
+#	# Once close enough, resume patrolling
+#	if global_position.distance_to(target_pos) < 5:
+#		action = 0
+#	play_animation(1)
