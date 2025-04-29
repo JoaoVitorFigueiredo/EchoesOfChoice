@@ -6988,21 +6988,21 @@ physics_layer_0/collision_mask = 133
 sources/0 = SubResource("TileSetAtlasSource_3yt2a")
 sources/1 = SubResource("TileSetAtlasSource_ce87l")
 
-[sub_resource type="Curve2D" id="Curve2D_k527x"]
+[sub_resource type="Curve2D" id="Curve2D_5omc5"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 195, 168, 0, 0, 0, 0, 200, -194, 0, 0, 0, 0, 807, -183)
+"points": PackedVector2Array(0, 0, 0, 0, 496, 268, 0, 0, 0, 0, 505, 15, 0, 0, 0, 0, 1120, 13)
 }
 point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_ka76e"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -165, 324, 0, 0, 0, 0, 480, 327)
+}
+point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_krlih"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -501, -163, 0, 0, 0, 0, -21, -171)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_ka76e"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -38, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 2
 
@@ -7030,31 +7030,25 @@ layer_2/tile_data = PackedInt32Array(-196555, 983040, 29, -131019, 983040, 30, -
 y_sort_enabled = true
 position = Vector2(41, -37)
 
-[node name="goblin" parent="." instance=ExtResource("4_owbrk")]
-position = Vector2(329, 192)
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_5omc5")
 
-[node name="PatrolPath" type="Path2D" parent="goblin"]
-curve = SubResource("Curve2D_k527x")
+[node name="goblin" parent="Path2D" instance=ExtResource("4_owbrk")]
+position = Vector2(496, 268)
+rotation = -1.53524
 
-[node name="PathTracker" type="PathFollow2D" parent="goblin/PatrolPath"]
-position = Vector2(195, 168)
-rotation = -1.55699
+[node name="PatrolPath" type="Path2D" parent="."]
+position = Vector2(350, 53)
+curve = SubResource("Curve2D_ka76e")
 
-[node name="goblin3" parent="." instance=ExtResource("4_owbrk")]
+[node name="goblin2" parent="PatrolPath" instance=ExtResource("4_owbrk")]
+
+[node name="PatrolPath2" type="Path2D" parent="."]
 position = Vector2(528, 186)
-
-[node name="PatrolPath" type="Path2D" parent="goblin3"]
 curve = SubResource("Curve2D_krlih")
 
-[node name="PathTracker" type="PathFollow2D" parent="goblin3/PatrolPath"]
+[node name="PathTracker" type="PathFollow2D" parent="PatrolPath2"]
 position = Vector2(-501, -163)
 rotation = -0.0166651
 
-[node name="goblin2" parent="." instance=ExtResource("4_owbrk")]
-position = Vector2(350, 53)
-
-[node name="PatrolPath" type="Path2D" parent="goblin2"]
-curve = SubResource("Curve2D_ka76e")
-
-[node name="PathTracker" type="PathFollow2D" parent="goblin2/PatrolPath"]
-position = Vector2(-38, 0)
+[node name="goblin3" parent="PatrolPath2" instance=ExtResource("4_owbrk")]
