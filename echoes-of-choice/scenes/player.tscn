@@ -136,5 +136,7 @@ frame_progress = 0.358174
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, 21.3333)
+position = Vector2(0, 20)
+scale = Vector2(0.8, 0.8)
+skew = -0.0331613
 shape = SubResource("ConvexPolygonShape2D_vqlv2")
