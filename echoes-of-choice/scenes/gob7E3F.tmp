@@ -105,13 +105,12 @@ animations = [{
 size = Vector2(22, 22)
 
 [node name="PathFollow2D" type="PathFollow2D"]
-rotates = false
-loop = false
 script = ExtResource("1_677uf")
 
 [node name="goblin" type="CharacterBody2D" parent="."]
+visible = false
 y_sort_enabled = true
-position = Vector2(1, -2)
+position = Vector2(26, 41)
 script = ExtResource("1_ntdl4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="goblin"]
