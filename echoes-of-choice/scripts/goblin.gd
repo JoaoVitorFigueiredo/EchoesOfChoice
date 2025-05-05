@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var speed = 50
 
-var action = 0 # 0 -> patrulha ; 1 -> perseguição ; 2 -> voltando pro lugar da patrulha
+var action = 2 # 0 -> patrulha ; 1 -> perseguição ; 2 -> voltando pro lugar da patrulha
 var player = null
 var player_last_known_location = null
 var curr_dir = null

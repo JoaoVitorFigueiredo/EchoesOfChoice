@@ -138,5 +138,17 @@ frame_progress = 0.358174
 y_sort_enabled = true
 position = Vector2(0, 20)
 scale = Vector2(0.8, 0.8)
-skew = -0.0331613
+skew = -0.0331614
 shape = SubResource("ConvexPolygonShape2D_vqlv2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 20)
+zoom = Vector2(2.5, 2.5)
+limit_left = -125
+limit_top = -110
+limit_right = 1577
+limit_bottom = 910
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
