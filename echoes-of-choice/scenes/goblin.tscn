@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://col1t1hfqhsir"]
 
 [ext_resource type="Script" path="res://scenes/goblin.gd" id="1_677uf"]
-[ext_resource type="Script" path="res://goblin.gd" id="1_ntdl4"]
+[ext_resource type="Script" path="res://scripts/goblin.gd" id="1_ntdl4"]
 [ext_resource type="Texture2D" uid="uid://c1lp3y3u073lo" path="res://art/goblin/goblin_attack.png" id="2_xj7im"]
 [ext_resource type="Texture2D" uid="uid://14au3c0xpcad" path="res://art/goblin/goblin_idle.png" id="3_0ubom"]
 [ext_resource type="Texture2D" uid="uid://ba3j1dxis056t" path="res://art/goblin/goblin_walk.png" id="4_8efna"]

@@ -10,7 +10,7 @@ var going_back = false
 @onready var goblin = $goblin
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(goblin.action)
+	
 	if goblin.action == 0:
 		if progress_ratio == 1 or progress_ratio == 0:
 			going_back = !going_back
