@@ -1,0 +1,129 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmv6v5pclskew"]
+
+[ext_resource type="Theme" uid="uid://dl7j3krgdcw84" path="res://new_theme.tres" id="1_2hvgp"]
+[ext_resource type="Script" path="res://MainMenu.gd" id="2_hoeal"]
+
+[sub_resource type="Gradient" id="Gradient_kgd13"]
+colors = PackedColorArray(0.0824798, 0.181381, 0, 1, 0.531868, 0.452724, 0.27777, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1a5vg"]
+gradient = SubResource("Gradient_kgd13")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_hoeal")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_1a5vg")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 2
+anchor_left = 0.495
+anchor_top = 0.341
+anchor_right = 0.495
+anchor_bottom = 0.341
+offset_left = -197.24
+offset_top = -18.968
+offset_right = 197.76
+offset_bottom = 19.032
+theme = ExtResource("1_2hvgp")
+theme_type_variation = &"HeaderLarge"
+text = "Echoes Of Choices"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 18.334
+anchor_top = 5.0
+anchor_right = 18.334
+anchor_bottom = 5.0
+offset_left = -2744.36
+offset_top = -378.0
+offset_right = -1167.36
+offset_bottom = -168.0
+color = Color(0.107354, 0.17325, 0.0652305, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Control2"]
+layout_mode = 0
+offset_left = -190.0
+offset_top = 260.0
+offset_right = 30.0
+offset_bottom = 1100.0
+color = Color(0.123681, 0.251219, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Control2"]
+layout_mode = 0
+offset_left = 474.0
+offset_top = -52.0
+offset_right = 1928.0
+offset_bottom = 108.0
+color = Color(0.533333, 0.45098, 0.278431, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Control2"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = -1178.0
+offset_right = 340.0
+offset_bottom = -235.0
+color = Color(0.588273, 0.571388, 0.371332, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_2hvgp")
+text = "Play"
+
+[node name="Settings" type="Button" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_2hvgp")
+text = "Settings"
+
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_2hvgp")
+text = "Quit"
+
+[connection signal="item_rect_changed" from="." to="." method="_on_item_rect_changed"]

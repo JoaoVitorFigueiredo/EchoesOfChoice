@@ -288,7 +288,7 @@ texture = ExtResource("1_jw8yn")
 60:15/0 = 0
 60:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 3.5, 7, 25, -8, 23, -8, 3.5)
 35:59/0 = 0
-35:59/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
+35:59/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.25, -2.5, 3.25, 5.125, -3.25, 5, -3.125, -2.125)
 41:20/0 = 0
 41:21/0 = 0
 41:22/0 = 0
@@ -615,6 +615,7 @@ texture = ExtResource("1_jw8yn")
 13:55/0 = 0
 9:54/0 = 0
 15:54/0 = 0
+16:68/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ejr55"]
 texture = ExtResource("2_26gqf")
@@ -995,6 +996,7 @@ texture = ExtResource("4_jd7ww")
 27:1/0 = 0
 28:1/0 = 0
 29:1/0 = 0
+29:1/0/modulate = Color(0.480123, 0.326637, 0.149811, 1)
 30:1/0 = 0
 31:1/0 = 0
 0:2/0 = 0

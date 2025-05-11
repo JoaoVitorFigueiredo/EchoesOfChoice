@@ -119,10 +119,10 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_vqlv2"]
-points = PackedVector2Array(14.07, 10, -14.895, 10.22, -16.29, 0, -14.37, -6.325, 17.985, -7.02, 20.445, -2.215, 16.63, 0)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hid0g"]
+size = Vector2(39.7236, 20.0055)
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(48, 43)
 scale = Vector2(0.75, 0.75)
 collision_layer = 2
@@ -134,12 +134,12 @@ animation = &"attack"
 frame = 1
 frame_progress = 0.358174
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
 y_sort_enabled = true
 position = Vector2(0, 20)
 scale = Vector2(0.8, 0.8)
 skew = -0.0331614
-shape = SubResource("ConvexPolygonShape2D_vqlv2")
+shape = SubResource("RectangleShape2D_hid0g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 20)

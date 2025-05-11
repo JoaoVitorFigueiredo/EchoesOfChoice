@@ -1,0 +1,22 @@
+# INTRODUÇÃO
+
+~ intro
+
+Narrador: Olá, viajante.
+Narrador: Este é o início de uma jornada marcada por escolhas... e consequências.
+Narrador: Tu eras conhecido como "Shadow", um nome temido e sussurrado na calada da noite.
+Narrador: Mas deixaste essa vida para trás... até agora.
+
+Narrador: A tua casa foi invadida. A tua mulher, assassinada. A tua filha, levada.
+Narrador: Diante do caos, surge a pergunta...
+
+-> Que tipo de homem irás ser desta vez?
+    -> Vingativo. Irei eliminar todos os responsáveis. O sangue pede justiça.
+        Shadow: Eles não fazem ideia do inferno que libertaram...
+        ->-> karma_vingativo
+    -> Redimido. Encontrarei a minha filha, sem me tornar um monstro de novo.
+        Shadow: Não posso perder o que ainda resta de mim.
+        ->-> karma_redentor
+    -> Não sei. Ainda estou perdido.
+        Shadow: Não sei se posso voltar... Não sei quem sou sem elas.
+        ->-> karma_indeciso

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://crqmllr6u31do"]
+
+[ext_resource type="Script" path="res://teleport_to_room_key.gd" id="1_vjvfd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5le6"]
+size = Vector2(10, 9)
+
+[node name="TeleportToRoomKey" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_vjvfd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p5le6")
+
+[connection signal="body_entered" from="." to="." method="_on_TeleportEscadas_body_entered"]

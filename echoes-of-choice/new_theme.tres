@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dl7j3krgdcw84"]
+
+[ext_resource type="FontFile" uid="uid://083k46xr5tfr" path="res://SuperPixel-m2L8j.ttf" id="1_mdows"]
+
+[resource]
+default_font = ExtResource("1_mdows")
+Button/colors/font_color = Color(0.625734, 0.632215, 0.622551, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 0)
+Button/fonts/font = ExtResource("1_mdows")

@@ -5,6 +5,13 @@ var speed =200
 var is_chased = false
 var n_chased = 0
 
+func player():
+	pass
+
+func _unhandled_input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"), "intro")
+
 func _process(delta):
 	if is_chased and n_chased == 0:
 		is_chased = false
@@ -15,6 +22,7 @@ func _physics_process(delta):
 	player_movement(delta)
 
 func player_movement(delta):
+	
 	if Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_up"):
 		curr_dir = "right"
 		play_animation(1)
