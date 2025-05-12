@@ -4,6 +4,7 @@ var curr_dir = "none"
 var speed =200
 var is_chased = false
 var n_chased = 0
+var health = 100
 
 func player():
 	pass

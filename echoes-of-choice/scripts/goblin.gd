@@ -69,8 +69,7 @@ func _process(delta):
 		action = 3 # End the chase and return to patrol
 		
 
-
-func _on_vision_body_entered(body: Node2D) -> void:
+func _on_vision_patrol_body_entered(body: CharacterBody2D) -> void:
 	player = body
 	raycast.target_position = player.position - position
 	raycast.force_raycast_update()

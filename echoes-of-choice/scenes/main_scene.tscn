@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmge0i482vgxv"]
+[gd_scene load_steps=7 format=3 uid="uid://cmge0i482vgxv"]
 
 [ext_resource type="Script" path="res://scenes/cidade.gd" id="1_8faox"]
 [ext_resource type="TileSet" uid="uid://sr1ynep0xkxu" path="res://scenes/Cidade.tres" id="1_hur0p"]
@@ -6,30 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://col1t1hfqhsir" path="res://scenes/goblin.tscn" id="4_owbrk"]
 [ext_resource type="PackedScene" uid="uid://bfxf50v3u0omb" path="res://scenes/key.tscn" id="5_wnnik"]
 
-[sub_resource type="Curve2D" id="Curve2D_5omc5"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 496, 268, 0, 0, 0, 0, 505, 15, 0, 0, 0, 0, 1120, 13)
-}
-point_count = 3
-
-[sub_resource type="Curve2D" id="Curve2D_ka76e"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -165, 324, 0, 0, 0, 0, 480, 327)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_krlih"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -501, -163, 0, 0, 0, 0, -21, -171)
-}
-point_count = 2
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqfj4"]
 size = Vector2(14, 12.5)
 
 [node name="teste" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(64, 208)
+position = Vector2(-283, 232)
 script = ExtResource("1_8faox")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -53,33 +35,6 @@ layer_2/tile_data = PackedInt32Array(-196555, 983040, 29, -131019, 983040, 30, -
 y_sort_enabled = true
 position = Vector2(34, -30)
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_5omc5")
-
-[node name="goblin" parent="Path2D" instance=ExtResource("4_owbrk")]
-position = Vector2(496, 268)
-rotation = -1.53524
-
-[node name="PatrolPath" type="Path2D" parent="."]
-position = Vector2(350, 53)
-curve = SubResource("Curve2D_ka76e")
-
-[node name="goblin2" parent="PatrolPath" instance=ExtResource("4_owbrk")]
-position = Vector2(-165, 324)
-rotation = 0.00465113
-
-[node name="PatrolPath2" type="Path2D" parent="."]
-position = Vector2(528, 186)
-curve = SubResource("Curve2D_krlih")
-
-[node name="PathTracker" type="PathFollow2D" parent="PatrolPath2"]
-position = Vector2(-501, -163)
-rotation = -0.0166651
-
-[node name="goblin3" parent="PatrolPath2" instance=ExtResource("4_owbrk")]
-position = Vector2(-501, -163)
-rotation = -0.0166651
-
 [node name="key" parent="." instance=ExtResource("5_wnnik")]
 position = Vector2(1373, 520)
 
@@ -89,6 +44,22 @@ collision_mask = 2
 
 [node name="caverna_colision" type="CollisionShape2D" parent="caverna"]
 shape = SubResource("RectangleShape2D_mqfj4")
+
+[node name="goblin3" parent="." instance=ExtResource("4_owbrk")]
+position = Vector2(27, 23)
+rotation = -0.0166651
+scale = Vector2(1, 1)
+
+[node name="goblin2" parent="." instance=ExtResource("4_owbrk")]
+position = Vector2(569, 340)
+rotation = 0.00465113
+
+[node name="goblin4" parent="." instance=ExtResource("4_owbrk")]
+position = Vector2(395, 165)
+rotation = 0.00930226
+
+[node name="goblin" parent="goblin4" instance=ExtResource("4_owbrk")]
+position = Vector2(616.304, -77.7362)
 
 [connection signal="body_entered" from="caverna" to="." method="_on_caverna_body_entered"]
 [connection signal="body_exited" from="caverna" to="." method="_on_caverna_body_exited"]
