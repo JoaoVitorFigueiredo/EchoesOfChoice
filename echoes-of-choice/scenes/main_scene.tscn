@@ -48,7 +48,6 @@ shape = SubResource("RectangleShape2D_mqfj4")
 [node name="goblin3" parent="." instance=ExtResource("4_owbrk")]
 position = Vector2(27, 23)
 rotation = -0.0166651
-scale = Vector2(1, 1)
 
 [node name="goblin2" parent="." instance=ExtResource("4_owbrk")]
 position = Vector2(569, 340)

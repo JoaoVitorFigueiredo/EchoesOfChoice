@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://cvfnp0evsu7ou"]
+[gd_scene load_steps=3 format=3 uid="uid://cvfnp0evsu7ou"]
+
+[ext_resource type="PackedScene" uid="uid://col1t1hfqhsir" path="res://scenes/goblin.tscn" id="1_jy6rn"]
+[ext_resource type="PackedScene" uid="uid://bsdf0aw0u3puc" path="res://scenes/player.tscn" id="2_fn60t"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="goblin" parent="." instance=ExtResource("1_jy6rn")]
+
+[node name="player" parent="." instance=ExtResource("2_fn60t")]
+position = Vector2(163, 102)

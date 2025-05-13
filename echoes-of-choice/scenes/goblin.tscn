@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://col1t1hfqhsir"]
+[gd_scene load_steps=19 format=3 uid="uid://col1t1hfqhsir"]
 
 [ext_resource type="Script" path="res://scripts/goblin.gd" id="1_ntdl4"]
 [ext_resource type="Texture2D" uid="uid://c1lp3y3u073lo" path="res://art/goblin/goblin_attack.png" id="2_xj7im"]
@@ -64,7 +64,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2qm87")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -103,6 +103,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_frfb6"]
 size = Vector2(22, 22)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4jhd"]
+size = Vector2(29, 47)
+
 [node name="goblin" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(1, -2)
@@ -137,5 +140,11 @@ position = Vector2(1, -2)
 
 [node name="vision_indicator" type="Polygon2D" parent="."]
 position = Vector2(8, 2)
+
+[node name="hitbox" type="Area2D" parent="." groups=["enemies"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-4.5, 7.5)
+shape = SubResource("RectangleShape2D_i4jhd")
 
 [connection signal="body_entered" from="vision_patrol" to="." method="_on_vision_patrol_body_entered"]

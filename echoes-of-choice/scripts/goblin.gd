@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var speed = 50
+@export var health := 50
 
 var action = 2 # 0 -> patrulha ; 1 -> perseguição ; 2 -> voltando pro lugar da patrulha
 var player = null
@@ -9,6 +10,15 @@ var curr_dir = null
 var last_known_position 
 var has_line_of_sight = false
 var target_position= false
+
+@export var attack_range := 40.0
+@export var attack_damage := 10
+@export var attack_cooldown := 1.0
+
+
+@onready var anim = $AnimatedSprite2D
+
+var can_attack := true
 
 @onready var raycast = $RayCast2D
 
@@ -83,7 +93,6 @@ func _on_vision_body_exited(body: Node2D) -> void:
 
 func play_animation(movement):
 	var dir = curr_dir
-	var anim =$AnimatedSprite2D
 	
 	if dir == "right":
 		anim.flip_h = false
@@ -100,24 +109,53 @@ func play_animation(movement):
 			anim.play("idle")
 
 func chase():
-	raycast.target_position = player.position - position
-	raycast.force_raycast_update()
-	
-	# Check if there's a clear line of sight
-	if not raycast.is_colliding():
-		has_line_of_sight = true
-		last_known_position = player.position
-	else:
-		has_line_of_sight = false
+	var distance_to_player = position.distance_to(player.position)
+
+	if distance_to_player > attack_range:
+		raycast.target_position = player.position - position
+		raycast.force_raycast_update()
 		
-	if has_line_of_sight:
-		target_position = player.position
-	else:
-		target_position = last_known_position
-	# Decide where to move
-	var direction = (target_position - position).normalized()
-	velocity = direction * speed  # or whatever speed
-	play_animation(1)
+		# Check if there's a clear line of sight
+		if not raycast.is_colliding():
+			has_line_of_sight = true
+			last_known_position = player.position
+		else:
+			has_line_of_sight = false
+			
+		if has_line_of_sight:
+			target_position = player.position
+		else:
+			target_position = last_known_position
+		# Decide where to move
+		var direction = (target_position - position).normalized()
+		velocity = direction * speed  # or whatever speed
+		play_animation(1)
+	
+	elif can_attack:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		attack()
+	
+func attack():
+	can_attack = false
+	anim.play("attack")
+	print("Goblin atacando!")
+
+	# Inicia o cooldown imediatamente (independente de sucesso)
+	start_attack_cooldown()
+
+	# Aguarda o fim da animação
+	await anim.animation_finished
+
+	# Verifica se o jogador ainda está por perto para causar dano
+	if player and position.distance_to(player.position) <= attack_range:
+		player.take_damage(attack_damage)
+
+func start_attack_cooldown():
+	print("iniciando timer 2/2")
+	await get_tree().create_timer(attack_cooldown).timeout
+	print("goblin pode atacar novamente")
+	can_attack = true
 
 func return_to_path(delta):
 	pass
@@ -131,3 +169,15 @@ func return_to_path(delta):
 		action = 0
 	play_animation(1)
 	"""
+
+
+func take_damage(amount: int):
+	health -= amount
+	print("Goblin took", amount, "damage. Remaining health:", health)
+
+	if health <= 0:
+		die()
+
+func die():
+	print("Goblin morreu")
+	queue_free()
