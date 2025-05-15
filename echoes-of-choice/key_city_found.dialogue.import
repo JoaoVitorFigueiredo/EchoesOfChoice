@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://cf3pj3r37jejg"
+path="res://.godot/imported/key_city_found.dialogue-1b7b5ecc3a85c315e9eb9e7345c7c583.tres"
+
+[deps]
+
+source_file="res://key_city_found.dialogue"
+dest_files=["res://.godot/imported/key_city_found.dialogue-1b7b5ecc3a85c315e9eb9e7345c7c583.tres"]
+
+[params]
+
+defaults=true
