@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvf7cjb7yq7ad"]
+
+[ext_resource type="Script" uid="uid://jbuarfon0j4o" path="res://panel_botão.gd" id="1_2nf0j"]
+[ext_resource type="Theme" uid="uid://dl7j3krgdcw84" path="res://new_theme.tres" id="2_gmq62"]
+
+[node name="panel_botão" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 7.0
+offset_right = 1.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2nf0j")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.52
+anchor_top = 0.5
+anchor_right = 0.52
+anchor_bottom = 0.5
+offset_left = -87.04
+offset_top = -26.0
+offset_right = 232.96
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_gmq62")
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_right = 126.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Clicar no espaço"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -27.0
+offset_right = 102.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2

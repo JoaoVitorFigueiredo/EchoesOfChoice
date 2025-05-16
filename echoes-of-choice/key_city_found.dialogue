@@ -1,8 +1,0 @@
-"chave_encontrada": {
-  "text": "Shadow: Finalmente... a chave. Isto aproxima-me da verdade... e da minha filha.",
-  "next": "chave_reflexao"
-},
-"chave_reflexao": {
-  "text": "Shadow: Espero que o que me espera naquela caverna valha o risco. Não posso voltar atrás agora.",
-  "next": "END"
-}

@@ -1,6 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://bsdf0aw0u3puc"]
+[gd_scene load_steps=24 format=3 uid="uid://bsdf0aw0u3puc"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_p6u7x"]
+[ext_resource type="Script" uid="uid://bryrpl5q1eh0f" path="res://scripts/player.gd" id="1_p6u7x"]
 [ext_resource type="Texture2D" uid="uid://dh711q4v657lg" path="res://art/shadow/shadow_hidle.png" id="2_823mn"]
 [ext_resource type="Texture2D" uid="uid://b4luph60t4w7y" path="res://art/shadow/new_attack/shadow_attack_0002.png" id="2_lgre4"]
 [ext_resource type="Texture2D" uid="uid://benej7cnef8h8" path="res://art/shadow/shadow_walk_2.png" id="3_3cisu"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://x4rr8q7u7k3f" path="res://art/shadow/new_attack/shadow_attack_0004.png" id="4_og4hu"]
 [ext_resource type="Texture2D" uid="uid://uqom6q4brlk7" path="res://art/shadow/new_attack/shadow_attack_0007.png" id="5_cia85"]
 [ext_resource type="Texture2D" uid="uid://cknualxg15iio" path="res://art/shadow/new_attack/shadow_attack_0006.png" id="6_2db1s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_smehm"]
+radius = 18.7142
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n3f68"]
 atlas = ExtResource("2_823mn")
@@ -131,6 +134,30 @@ scale = Vector2(0.75, 0.75)
 collision_layer = 3
 script = ExtResource("1_p6u7x")
 
+[node name="Direction" type="Marker2D" parent="."]
+position = Vector2(0, 20)
+
+[node name="dialogue" type="Area2D" parent="Direction"]
+position = Vector2(0, -20)
+collision_layer = 0
+collision_mask = 16
+
+[node name="dialogue_colision" type="CollisionShape2D" parent="Direction/dialogue"]
+position = Vector2(2.66667, 10.6667)
+shape = SubResource("CircleShape2D_smehm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 20)
+zoom = Vector2(2.5, 2.5)
+limit_left = -176
+limit_top = -313
+limit_right = 1500
+limit_bottom = 698
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_g0s4s")
 animation = &"attack"
@@ -141,18 +168,6 @@ position = Vector2(0, 20)
 scale = Vector2(0.8, 0.8)
 skew = -0.0331614
 shape = SubResource("RectangleShape2D_hid0g")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, 20)
-zoom = Vector2(2.5, 2.5)
-limit_left = -125
-limit_top = -110
-limit_right = 1577
-limit_bottom = 910
-limit_smoothed = true
-rotation_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
 
 [node name="knife_area" type="Area2D" parent="."]
 collision_layer = 0

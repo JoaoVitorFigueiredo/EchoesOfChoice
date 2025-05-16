@@ -11,14 +11,32 @@ config_version=5
 [application]
 
 config/name="Echoes Of Choice"
-run/main_scene="res://scenes/control.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+run/main_scene="uid://bmv6v5pclskew"
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://scenes/global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[dialogue_manager]
+
+editor/new_file_template="~ this_is_a_node_title
+Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
+Nathan: Here are some choices.
+- First one
+	Nathan: You picked the first one.
+- Second one
+	Nathan: You picked the second one.
+- Start again => this_is_a_node_title
+- End the conversation => END
+Nathan: For more information see the online documentation.
+=> END"
+
+[editor]
+
+movie_writer/main_scene="res://scenes/control.tscn"
 
 [editor_plugins]
 
@@ -60,7 +78,11 @@ move_down={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/main.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogos/cave_enter.dialogue", "res://dialogos/key_city_found.dialogue", "res://dialogos/main.dialogue", "res://dialogos/perfeito.dialogue", "res://dialogos/tutorial.dialogue", "res://dialogos/porta.dialogue")
+
+[layer_names]
+
+2d_physics/layer_5="actionable"
 
 [rendering]
 

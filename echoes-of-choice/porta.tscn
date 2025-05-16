@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmsq1af3dh686"]
 
-[ext_resource type="Script" path="res://porta.gd" id="1_2elte"]
+[ext_resource type="Script" uid="uid://d3axondom7uri" path="res://porta.gd" id="1_2elte"]
 [ext_resource type="Texture2D" uid="uid://s4pltr6apo0t" path="res://art/wood.png" id="2_wd3ri"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_417jq"]
