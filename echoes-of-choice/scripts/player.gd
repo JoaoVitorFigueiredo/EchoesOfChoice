@@ -5,18 +5,21 @@ var speed =300
 var is_chased = false
 var n_chased = 0
 var health = 100
+var max_health = 100
 
 
 @export var knife_damage := 10
 @onready var knife_area = $knife_area
 @onready var animation_player = $AnimatedSprite2D
 @onready var actionable_finder: Area2D = $Direction/dialogue
+@onready var health_bar = $Camera2D/CanvasLayer/HealthBar
 
 func _ready():
 	knife_area.area_entered.connect(_on_knife_hit)
 	knife_area.monitoring = false
 	
 	animation_player.animation_finished.connect(_on_animation_finished)
+	max_health = health
 
 var is_attacking = false
 
@@ -46,6 +49,7 @@ func _on_animation_finished():
 func take_damage(amount: int):
 	health -= amount
 	print("Jogador levou", amount, "de dano. Vida restante:", health)
+	health_bar.value = health * 100 / max_health
 	if health <= 0:
 		die()
 

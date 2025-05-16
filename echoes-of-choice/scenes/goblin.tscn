@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://col1t1hfqhsir"]
 
-[ext_resource type="Script" uid="uid://cxkgb3uju6a7y" path="res://scripts/goblin.gd" id="1_ntdl4"]
+[ext_resource type="Script" path="res://scripts/goblin.gd" id="1_ntdl4"]
 [ext_resource type="Texture2D" uid="uid://c1lp3y3u073lo" path="res://art/goblin/goblin_attack.png" id="2_xj7im"]
 [ext_resource type="Texture2D" uid="uid://14au3c0xpcad" path="res://art/goblin/goblin_idle.png" id="3_0ubom"]
 [ext_resource type="Texture2D" uid="uid://ba3j1dxis056t" path="res://art/goblin/goblin_walk.png" id="4_8efna"]
@@ -146,5 +146,13 @@ position = Vector2(8, 2)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(-4.5, 7.5)
 shape = SubResource("RectangleShape2D_i4jhd")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -18.0
+offset_top = 33.0
+offset_right = 9.0
+offset_bottom = 37.0
+value = 100.0
+show_percentage = false
 
 [connection signal="body_entered" from="vision_patrol" to="." method="_on_vision_patrol_body_entered"]

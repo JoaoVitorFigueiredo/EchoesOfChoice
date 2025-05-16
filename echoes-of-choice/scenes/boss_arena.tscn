@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://hntvuvd4m2ip"]
 
 [ext_resource type="TileSet" uid="uid://c6jghmuxqv7c2" path="res://scenes/Caverna.tres" id="1_4jg7w"]
-[ext_resource type="Script" uid="uid://80tj8o5u4ivv" path="res://scenes/boss_arena.gd" id="1_mege2"]
+[ext_resource type="Script" path="res://scenes/boss_arena.gd" id="1_mege2"]
 [ext_resource type="PackedScene" uid="uid://bsdf0aw0u3puc" path="res://scenes/player.tscn" id="2_i0sbv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5iw5k"]
