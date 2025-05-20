@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://cmge0i482vgxv"]
 
-[ext_resource type="Script" uid="uid://dorhk5d72hgil" path="res://scenes/cidade.gd" id="1_8faox"]
+[ext_resource type="Script" path="res://scenes/cidade.gd" id="1_8faox"]
 [ext_resource type="TileSet" uid="uid://sr1ynep0xkxu" path="res://scenes/Cidade.tres" id="1_hur0p"]
 [ext_resource type="PackedScene" uid="uid://bsdf0aw0u3puc" path="res://scenes/player.tscn" id="3_ck5ju"]
 [ext_resource type="PackedScene" uid="uid://col1t1hfqhsir" path="res://scenes/goblin.tscn" id="4_owbrk"]

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var speed = 50
 @export var health := 50
+var max_health = 50
 
 var action = 2 # 0 -> patrulha ; 1 -> perseguição ; 2 -> voltando pro lugar da patrulha
 var player = null
@@ -29,6 +30,8 @@ var can_attack := true
 func _ready():
 	visual_polygon.polygon = col_polygon.polygon
 	visual_polygon.color = Color(1, 0, 0, 0.3)  
+	
+	health = max_health
 
 func _physics_process(delta):
 	
@@ -143,6 +146,9 @@ func attack():
 
 	# Inicia o cooldown imediatamente (independente de sucesso)
 	start_attack_cooldown()
+	
+	velocity.x = 0
+	velocity.y = 0
 
 	# Aguarda o fim da animação
 	await anim.animation_finished
@@ -170,10 +176,14 @@ func return_to_path(delta):
 	play_animation(1)
 	"""
 
+@onready var health_bar = $HealthBar
 
 func take_damage(amount: int):
 	health -= amount
 	print("Goblin took", amount, "damage. Remaining health:", health)
+	
+	health_bar.value = health * 100 / max_health
+	
 
 	if health <= 0:
 		die()
