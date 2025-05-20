@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://euyqkxjxosr8"]
 
 [ext_resource type="TileSet" uid="uid://c6jghmuxqv7c2" path="res://scenes/Caverna.tres" id="1_b4yxo"]
-[ext_resource type="Script" path="res://scenes/caverna.gd" id="1_v0en2"]
+[ext_resource type="Script" uid="uid://cmfg1y8lmktgi" path="res://scenes/caverna.gd" id="1_v0en2"]
 [ext_resource type="PackedScene" uid="uid://bfxf50v3u0omb" path="res://scenes/key.tscn" id="3_hxegc"]
 [ext_resource type="PackedScene" uid="uid://bsdf0aw0u3puc" path="res://scenes/player.tscn" id="4_yl1bn"]
 [ext_resource type="PackedScene" uid="uid://crqmllr6u31do" path="res://scripts/teleport_to_room_key.tscn" id="5_rdx7g"]
