@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://f3t4yqsny334"]
+
+[ext_resource type="PackedScene" uid="uid://col1t1hfqhsir" path="res://scenes/goblin.tscn" id="1_6dt3h"]
+
+[node name="goblin_informante" instance=ExtResource("1_6dt3h")]
+
+[node name="HealthBar" type="ProgressBar" parent="." index="7"]
+offset_left = -18.0
+offset_top = 33.0
+offset_right = 9.0
+offset_bottom = 37.0
+value = 100.0
+show_percentage = false

@@ -147,4 +147,13 @@ position = Vector2(8, 2)
 position = Vector2(-4.5, 7.5)
 shape = SubResource("RectangleShape2D_i4jhd")
 
+[node name="HealthBar" type="ProgressBar" parent="."]
+self_modulate = Color(0, 1, 0, 1)
+offset_left = -22.0
+offset_top = 34.0
+offset_right = 14.0
+offset_bottom = 42.0
+value = 100.0
+show_percentage = false
+
 [connection signal="body_entered" from="vision_patrol" to="." method="_on_vision_patrol_body_entered"]
