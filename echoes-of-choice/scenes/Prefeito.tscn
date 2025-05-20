@@ -1,32 +1,30 @@
-[gd_scene load_steps=9 format=3 uid="uid://gv1afxjcfkpv"]
+[gd_scene load_steps=7 format=3 uid="uid://gv1afxjcfkpv"]
 
-[ext_resource type="Texture2D" uid="uid://coklvgt0wfwhm" path="res://art/Prefeito/prefeito_0001.png" id="1_jnrx0"]
-[ext_resource type="Texture2D" uid="uid://hmplsioyk3bc" path="res://art/Prefeito/prefeito_0002.png" id="2_pb1eb"]
-[ext_resource type="Texture2D" uid="uid://b7p2yym2dgu2p" path="res://art/Prefeito/prefeito_0003.png" id="3_881oc"]
-[ext_resource type="Texture2D" uid="uid://cnjosoftjvwfm" path="res://art/Prefeito/prefeito_0004.png" id="4_vqerv"]
-[ext_resource type="Texture2D" uid="uid://cmshcrlc6p3ya" path="res://art/Prefeito/prefeito_0005.png" id="5_l7y4y"]
-[ext_resource type="Texture2D" uid="uid://qotituih5it4" path="res://art/Prefeito/prefeito_0006.png" id="6_xpbr4"]
+[ext_resource type="Texture2D" uid="uid://b2oyswsoppswv" path="res://art/presidente/presidente_idle.png" id="1_cvv8y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgqvv"]
+atlas = ExtResource("1_cvv8y")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d52at"]
+atlas = ExtResource("1_cvv8y")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_087k8"]
+atlas = ExtResource("1_cvv8y")
+region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3n16k"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_jnrx0")
+"texture": SubResource("AtlasTexture_cgqvv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_pb1eb")
+"texture": SubResource("AtlasTexture_d52at")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_881oc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_vqerv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_l7y4y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_xpbr4")
+"texture": SubResource("AtlasTexture_087k8")
 }],
 "loop": true,
 "name": &"Walk",
@@ -39,6 +37,8 @@ size = Vector2(21, 29.5)
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7, -11)
+scale = Vector2(0.851563, 0.851562)
 sprite_frames = SubResource("SpriteFrames_3n16k")
 animation = &"Walk"
 

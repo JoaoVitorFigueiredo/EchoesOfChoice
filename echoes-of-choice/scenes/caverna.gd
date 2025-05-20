@@ -10,7 +10,8 @@ func _ready():
 		print("mudar posição")
 		$player.position.x = Global.player_return_from_boss_caverna_posx
 		$player.position.y= Global.player_return_from_boss_caverna_posy
-
+	
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.rocks_fall, true)
 
 func _process(delta):
 	change_scene()

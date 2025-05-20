@@ -114,8 +114,7 @@ script = ExtResource("1_ntdl4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_eoc3b")
-animation = &"attack"
-frame_progress = 0.48353
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 20)

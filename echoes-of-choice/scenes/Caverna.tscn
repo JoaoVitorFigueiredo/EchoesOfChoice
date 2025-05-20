@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://euyqkxjxosr8"]
+[gd_scene load_steps=11 format=3 uid="uid://euyqkxjxosr8"]
 
 [ext_resource type="TileSet" uid="uid://c6jghmuxqv7c2" path="res://scenes/Caverna.tres" id="1_b4yxo"]
 [ext_resource type="Script" uid="uid://cmfg1y8lmktgi" path="res://scenes/caverna.gd" id="1_v0en2"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://crqmllr6u31do" path="res://scripts/teleport_to_room_key.tscn" id="5_rdx7g"]
 [ext_resource type="PackedScene" uid="uid://txebtddb7tfi" path="res://scripts/teleport_to_room_cave.tscn" id="6_yw02a"]
 [ext_resource type="PackedScene" uid="uid://bmsq1af3dh686" path="res://porta.tscn" id="7_fqnjn"]
+[ext_resource type="PackedScene" uid="uid://col1t1hfqhsir" path="res://scenes/goblin.tscn" id="8_w6xs6"]
+[ext_resource type="PackedScene" uid="uid://b4h80rjp2lit3" path="res://scenes/goblin_informante.tscn" id="9_iu580"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmny2"]
 size = Vector2(20, 18)
@@ -78,6 +80,16 @@ position = Vector2(-126, -181)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="colisions2"]
 polygon = PackedVector2Array(1053, 371, 1038, 371, 1023, 378, 1015, 395, 1008, 401, 992, 404, 993, 480, 1029, 502, 1112, 500, 1132, 480, 1131, 402, 1117, 401, 1097, 372, 1070, 371, 1070, 341, 1053, 341, 1053, 368, 1042, 326, 1159, 331, 1164, 523, 950, 515, 975, 371, 1025, 348)
+
+[node name="goblin" parent="." instance=ExtResource("8_w6xs6")]
+position = Vector2(163, 489)
+
+[node name="goblin2" parent="." instance=ExtResource("8_w6xs6")]
+position = Vector2(206, 276)
+
+[node name="goblin_informante" parent="." instance=ExtResource("9_iu580")]
+position = Vector2(505, 492)
+dialogue_resource = null
 
 [connection signal="body_entered" from="caverna_exit_point" to="." method="_on_caverna_exit_point_body_entered"]
 [connection signal="body_exited" from="caverna_exit_point" to="." method="_on_caverna_exit_point_body_exited"]

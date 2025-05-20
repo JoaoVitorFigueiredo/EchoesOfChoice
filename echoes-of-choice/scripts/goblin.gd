@@ -4,7 +4,7 @@ var speed = 50
 @export var health := 50
 var max_health = 50
 
-var action = 0 # 0 -> patrulha ; 1 -> perseguição ; 2 -> voltando pro lugar da patrulha
+var action = 2 # 0 -> patrulha ; 1 -> perseguição ; 2 -> voltando pro lugar da patrulha
 var player = null
 var player_last_known_location = null
 var curr_dir = null
@@ -33,30 +33,15 @@ func _ready():
 	
 	health = max_health
 
-
-var directions = [Vector2.DOWN, Vector2.LEFT, Vector2.UP, Vector2.RIGHT]
-var direction_index = 0
-@export var direction_change_interval := 2.0  # seconds between turns
-var direction_timer := 0.0
-
-
 func _physics_process(delta):
+	
 	match action:
 		0:
-			direction_timer += delta
-			if direction_timer >= direction_change_interval:
-				print("girou")
-				direction_timer = 0.0
-				direction_index = (direction_index + 1) % directions.size()
-				
-				# Set new velocity in the new direction
-				curr_dir = directions[direction_index]
-				velocity = curr_dir * speed
+			print(action)	
+			velocity.x = 0
+			velocity.y = 0
+			
 
-				# Optionally update the RayCast or any other directional component
-			else:
-				# Stop moving between direction changes
-				velocity = Vector2.ZERO
 		1:
 			chase()
 			
@@ -110,15 +95,21 @@ func _on_vision_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.
 
 func play_animation(movement):
-	if curr_dir == Vector2.RIGHT:
+	var dir = curr_dir
+	
+	if dir == "right":
 		anim.flip_h = false
-	elif curr_dir == Vector2.LEFT:
-		anim.flip_h = true
-	if movement == 1:
-		anim.play("walk")
+		if movement == 1:
+			anim.play("walk")
+		elif movement == 0:
+			anim.play("idle")
+			
 	else:
-		anim.play("idle")
-
+		anim.flip_h = false
+		if movement == 1:
+			anim.play("walk")
+		elif movement == 0:
+			anim.play("idle")
 
 func chase():
 	var distance_to_player = position.distance_to(player.position)
@@ -152,7 +143,7 @@ func attack():
 	can_attack = false
 	anim.play("attack")
 	print("Goblin atacando!")
-
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.knife_slash)
 	# Inicia o cooldown imediatamente (independente de sucesso)
 	start_attack_cooldown()
 	
@@ -190,8 +181,7 @@ func return_to_path(delta):
 func take_damage(amount: int):
 	health -= amount
 	print("Goblin took", amount, "damage. Remaining health:", health)
-	print()
-	
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.hit_attack)
 	health_bar.value = health * 100 / max_health
 	
 

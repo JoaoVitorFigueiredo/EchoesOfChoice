@@ -196,5 +196,5 @@ shape = SubResource("RectangleShape2D_hid0g")
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="knife_area"]
-position = Vector2(24, 20)
+position = Vector2(25.3333, 13.3333)
 shape = SubResource("RectangleShape2D_crrdo")

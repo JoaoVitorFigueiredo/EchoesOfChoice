@@ -17,7 +17,7 @@ var max_health = 100
 func _ready():
 	knife_area.area_entered.connect(_on_knife_hit)
 	knife_area.monitoring = false
-	
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.walk_sound)
 	animation_player.animation_finished.connect(_on_animation_finished)
 	max_health = health
 
@@ -29,6 +29,7 @@ func attack():
 	is_attacking = true
 	velocity = Vector2.ZERO
 	knife_area.monitoring = true
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.knife_slash)
 	animation_player.play("attack")
 
 func _on_knife_hit(area: Area2D):

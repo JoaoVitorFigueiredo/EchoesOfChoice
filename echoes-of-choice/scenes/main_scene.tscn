@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cmge0i482vgxv"]
+[gd_scene load_steps=19 format=3 uid="uid://cmge0i482vgxv"]
 
 [ext_resource type="Script" uid="uid://dorhk5d72hgil" path="res://scenes/cidade.gd" id="1_8faox"]
 [ext_resource type="TileSet" uid="uid://sr1ynep0xkxu" path="res://scenes/Cidade.tres" id="1_hur0p"]
@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://boa2th1l4g5qw" path="res://dialogos/casa_shadow.dialogue" id="11_si52b"]
 [ext_resource type="PackedScene" uid="uid://bmsq1af3dh686" path="res://porta.tscn" id="12_mngbo"]
 [ext_resource type="PackedScene" uid="uid://gv1afxjcfkpv" path="res://scenes/Prefeito.tscn" id="13_4w45t"]
+[ext_resource type="PackedScene" uid="uid://b61j5k1f4ikf0" path="res://scenes/cidadao.tscn" id="16_01n6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqfj4"]
 size = Vector2(14, 12.5)
@@ -23,6 +24,7 @@ size = Vector2(14, 12.5)
 size = Vector2(30, 22.75)
 
 [node name="teste" type="Node2D"]
+modulate = Color(0.85, 0.85, 0.85, 1)
 y_sort_enabled = true
 script = ExtResource("1_8faox")
 
@@ -154,10 +156,10 @@ interaction_text = "Encontrei a chave"
 
 [node name="panel_botão" parent="intro_action3" instance=ExtResource("8_18nlu")]
 top_level = true
-offset_left = 1225.0
-offset_top = 419.0
-offset_right = 1225.0
-offset_bottom = 419.0
+offset_left = 1273.0
+offset_top = 416.0
+offset_right = 1273.0
+offset_bottom = 416.0
 scale = Vector2(0.2, 0.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="intro_action3"]
@@ -197,6 +199,9 @@ position = Vector2(-126, -181)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="colisions"]
 position = Vector2(-155.557, -293.779)
 polygon = PackedVector2Array(112.557, 177.779, 1766.56, 178.779, 1766.56, 1156.78, 117.557, 1157.78, 117.557, 168.779, 58.5566, 242.779, 22.5566, 1337.78, 1976.56, 1269.78, 1903.56, 113.779, 161.557, 92.7787)
+
+[node name="cidadao" parent="." instance=ExtResource("16_01n6w")]
+position = Vector2(1351, 493)
 
 [connection signal="body_entered" from="caverna" to="." method="_on_caverna_body_entered"]
 [connection signal="body_exited" from="caverna" to="." method="_on_caverna_body_exited"]

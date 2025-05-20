@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmv6v5pclskew"]
+[gd_scene load_steps=9 format=3 uid="uid://bmv6v5pclskew"]
 
 [ext_resource type="Theme" uid="uid://dl7j3krgdcw84" path="res://new_theme.tres" id="1_2hvgp"]
 [ext_resource type="Script" uid="uid://dmd6o62ayqpgl" path="res://MainMenu.gd" id="2_hoeal"]
 [ext_resource type="Texture2D" uid="uid://c66bdmjb00rmh" path="res://portrait/Shadow.png" id="3_tjwpk"]
 [ext_resource type="Texture2D" uid="uid://d1iuoybufv3dy" path="res://portrait/KarmaNegativo.png" id="4_lpubu"]
 [ext_resource type="Texture2D" uid="uid://d1hl2babt6d36" path="res://portrait/KarmaPositivo.png" id="5_lt2xq"]
+[ext_resource type="Texture2D" uid="uid://dyo1wtpkt57w6" path="res://portrait/Prefeito.png" id="6_lpubu"]
 
 [sub_resource type="Gradient" id="Gradient_kgd13"]
 offsets = PackedFloat32Array(0.00614754, 0.70082, 1)
@@ -60,6 +61,26 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Sprite2D" type="Sprite2D" parent="Control2"]
+position = Vector2(271, 236)
+scale = Vector2(6.84375, 6.75)
+texture = ExtResource("3_tjwpk")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Control2"]
+position = Vector2(-402, 262)
+scale = Vector2(6.84375, 6.75)
+texture = ExtResource("4_lpubu")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Control2"]
+position = Vector2(478, -192)
+scale = Vector2(6.84375, 6.75)
+texture = ExtResource("5_lt2xq")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Control2"]
+position = Vector2(-276, -232)
+scale = Vector2(6.84375, 6.75)
+texture = ExtResource("6_lpubu")
+
 [node name="ColorRect" type="ColorRect" parent="Control2"]
 layout_mode = 1
 anchors_preset = -1
@@ -67,9 +88,9 @@ anchor_left = 18.334
 anchor_top = 5.0
 anchor_right = 18.334
 anchor_bottom = 5.0
-offset_left = -2744.36
+offset_left = -2727.36
 offset_top = -378.0
-offset_right = -1167.36
+offset_right = -1150.36
 offset_bottom = -168.0
 color = Color(0, 0, 0, 1)
 
@@ -83,17 +104,17 @@ color = Color(0.0588235, 0.0588235, 0.0313726, 0.552941)
 
 [node name="ColorRect3" type="ColorRect" parent="Control2"]
 layout_mode = 0
-offset_left = 474.0
-offset_top = -52.0
-offset_right = 1928.0
-offset_bottom = 108.0
+offset_left = 457.0
+offset_top = 62.0
+offset_right = 1911.0
+offset_bottom = 222.0
 color = Color(0.865451, 0.939371, 0.936539, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="Control2"]
 layout_mode = 0
-offset_left = 121.0
+offset_left = 43.0
 offset_top = -1178.0
-offset_right = 340.0
+offset_right = 262.0
 offset_bottom = -235.0
 color = Color(0.830435, 0.907935, 0.924179, 1)
 
@@ -102,10 +123,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = -2.0
-offset_right = 1.0
-offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -129,20 +146,5 @@ unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("1_2hvgp")
 text = "Quit"
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(701, 435)
-scale = Vector2(6.84375, 6.75)
-texture = ExtResource("3_tjwpk")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(187, 232)
-scale = Vector2(6.84375, 6.75)
-texture = ExtResource("4_lpubu")
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(966, 222)
-scale = Vector2(6.84375, 6.75)
-texture = ExtResource("5_lt2xq")
 
 [connection signal="item_rect_changed" from="." to="." method="_on_item_rect_changed"]

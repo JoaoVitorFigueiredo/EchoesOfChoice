@@ -38,7 +38,7 @@ func create_2d_audio_at_location(location: Vector2, type: SoundEffect.SOUND_EFFE
 
 
 ## Creates a sound effect if the limit has not been reached. Pass [param type] for the SoundEffect to be queued.
-func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
+func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE, loop := false) -> void:
 	if sound_effect_dict.has(type):
 		var sound_effect: SoundEffect = sound_effect_dict[type]
 		if sound_effect.has_open_limit():
@@ -46,13 +46,19 @@ func create_audio(type: SoundEffect.SOUND_EFFECT_TYPE) -> void:
 			var new_audio: AudioStreamPlayer = AudioStreamPlayer.new()
 			add_child(new_audio)
 			new_audio.stream = sound_effect.sound_effect
+			new_audio.stream.loop = true 
 			new_audio.volume_db = sound_effect.volume
 			new_audio.pitch_scale = sound_effect.pitch_scale
 			var rng := RandomNumberGenerator.new()
 			rng.randomize()
 			new_audio.pitch_scale += rng.randf_range(-sound_effect.pitch_randomness, sound_effect.pitch_randomness)
-			new_audio.finished.connect(sound_effect.on_audio_finished)
-			new_audio.finished.connect(new_audio.queue_free)
+			
+			if not loop:
+				new_audio.finished.connect(sound_effect.on_audio_finished)
+				new_audio.finished.connect(new_audio.queue_free)
+			
 			new_audio.play()
 	else:
 		push_error("Audio Manager failed to find setting for type ", type)
+
+	

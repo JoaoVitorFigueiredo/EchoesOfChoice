@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bm8qekus1o4rc"
+path="res://.godot/imported/goblin_patrulha.dialogue-49674c09d692f7a6340e1f133da31dd5.tres"
+
+[deps]
+
+source_file="res://dialogos/goblin_patrulha.dialogue"
+dest_files=["res://.godot/imported/goblin_patrulha.dialogue-49674c09d692f7a6340e1f133da31dd5.tres"]
+
+[params]
+
+defaults=true
