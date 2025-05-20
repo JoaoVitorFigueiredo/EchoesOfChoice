@@ -6,4 +6,5 @@ func _on_Area2D_body_entered(body):
 		print(current_scene)
 		Global.keys[current_scene] = true
 		print("Chave apanhada para a cena:", current_scene)
+		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.pick_item, false)
 		queue_free()

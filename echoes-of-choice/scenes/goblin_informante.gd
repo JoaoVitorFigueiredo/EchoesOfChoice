@@ -15,7 +15,10 @@ var target_position= false
 @export var attack_range := 40.0
 @export var attack_damage := 10
 @export var attack_cooldown := 1.0
+
 @export var dialogue_resource: DialogueResource
+@export var dialogue_start: String = "LastHitOnGoblin"
+
 
 
 
@@ -145,7 +148,7 @@ func attack():
 	can_attack = false
 	anim.play("attack")
 	print("Goblin atacando!")
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.knife_slash)
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.knife_slash, false)
 	# Inicia o cooldown imediatamente (independente de sucesso)
 	start_attack_cooldown()
 	
@@ -183,7 +186,7 @@ func return_to_path(delta):
 func take_damage(amount: int):
 	health -= amount
 	print("Goblin took", amount, "damage. Remaining health:", health)
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.hit_attack)
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.hit_attack, false)
 	health_bar.value = health * 100 / max_health
 	
 
@@ -191,6 +194,9 @@ func take_damage(amount: int):
 		die()
 
 func die():
-	print("Goblin morreu")
-	DialogueManager.show_example_dialogue_balloon(dialogue_resource, "death")   
+	print(dialogue_resource)
+	if dialogue_resource:
+		DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
+	else:
+		push_error("dialogue_resource não atribuído ao Goblin.")
 	queue_free()

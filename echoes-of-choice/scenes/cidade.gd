@@ -9,8 +9,7 @@ func _ready():
 	else:
 		$player.position.x = Global.player_exit_caverna_ladder_posx
 		$player.position.y= Global.player_exit_caverna_ladder_posy
-	while true:
-		AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.village_sound, true)
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.village_sound, true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

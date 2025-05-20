@@ -155,7 +155,7 @@ func _type_next(delta: float, seconds_needed: float) -> void:
 
 			# Toca som apenas se for uma letra "real"
 			if char.length() > 0 and char != " " and not char in [".", ",", "!", "?", ":"]:
-				AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.text_sound)
+				AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.text_sound, false)
 
 
 			# See if there's time to type out some more in this frame

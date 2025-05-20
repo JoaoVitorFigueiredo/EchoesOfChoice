@@ -13,6 +13,7 @@ enum SOUND_EFFECT_TYPE {
 	village_sound,
 	walk_sound,
 	hit_attack,
+	pick_item,
 }
 
 @export_range(0, 10) var limit: int = 5 ## Maximum number of this SoundEffect to play simultaneously before culled.

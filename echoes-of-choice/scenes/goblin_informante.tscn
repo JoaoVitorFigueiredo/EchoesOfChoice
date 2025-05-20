@@ -6,3 +6,4 @@
 [node name="goblin_informante" instance=ExtResource("1_6dt3h")]
 script = ExtResource("2_0euta")
 dialogue_resource = null
+dialogue_start = "LastHitOnGoblin"

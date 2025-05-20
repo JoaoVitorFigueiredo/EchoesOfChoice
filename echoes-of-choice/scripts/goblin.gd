@@ -143,7 +143,7 @@ func attack():
 	can_attack = false
 	anim.play("attack")
 	print("Goblin atacando!")
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.knife_slash)
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.knife_slash, false)
 	# Inicia o cooldown imediatamente (independente de sucesso)
 	start_attack_cooldown()
 	
@@ -181,7 +181,7 @@ func return_to_path(delta):
 func take_damage(amount: int):
 	health -= amount
 	print("Goblin took", amount, "damage. Remaining health:", health)
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.hit_attack)
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.hit_attack, false)
 	health_bar.value = health * 100 / max_health
 	
 

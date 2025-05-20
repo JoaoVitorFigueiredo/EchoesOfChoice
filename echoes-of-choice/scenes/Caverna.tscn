@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://euyqkxjxosr8"]
+[gd_scene load_steps=12 format=3 uid="uid://euyqkxjxosr8"]
 
 [ext_resource type="TileSet" uid="uid://c6jghmuxqv7c2" path="res://scenes/Caverna.tres" id="1_b4yxo"]
 [ext_resource type="Script" uid="uid://cmfg1y8lmktgi" path="res://scenes/caverna.gd" id="1_v0en2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bmsq1af3dh686" path="res://porta.tscn" id="7_fqnjn"]
 [ext_resource type="PackedScene" uid="uid://col1t1hfqhsir" path="res://scenes/goblin.tscn" id="8_w6xs6"]
 [ext_resource type="PackedScene" uid="uid://b4h80rjp2lit3" path="res://scenes/goblin_informante.tscn" id="9_iu580"]
+[ext_resource type="Resource" uid="uid://bm8qekus1o4rc" path="res://dialogos/goblin_patrulha.dialogue" id="10_om7a2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmny2"]
 size = Vector2(20, 18)
@@ -89,7 +90,7 @@ position = Vector2(206, 276)
 
 [node name="goblin_informante" parent="." instance=ExtResource("9_iu580")]
 position = Vector2(505, 492)
-dialogue_resource = null
+dialogue_resource = ExtResource("10_om7a2")
 
 [connection signal="body_entered" from="caverna_exit_point" to="." method="_on_caverna_exit_point_body_entered"]
 [connection signal="body_exited" from="caverna_exit_point" to="." method="_on_caverna_exit_point_body_exited"]
