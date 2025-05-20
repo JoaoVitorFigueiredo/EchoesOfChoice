@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4754qlpx6hj2"
+path="res://.godot/imported/636266_klankbeeld_village-calm-928pm-220522_0369 (online-audio-converter.com).mp3-8b8e540b7ebafdd6717ead385536caf2.mp3str"
+
+[deps]
+
+source_file="res://sound/636266_klankbeeld_village-calm-928pm-220522_0369 (online-audio-converter.com).mp3"
+dest_files=["res://.godot/imported/636266_klankbeeld_village-calm-928pm-220522_0369 (online-audio-converter.com).mp3-8b8e540b7ebafdd6717ead385536caf2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

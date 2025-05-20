@@ -7,7 +7,7 @@ Narrador: Usa as teclas [Setas] ou [WASD] para te movimentares.
 
 Narrador: Estás a ouvir? Alguém aproxima-se...
 
-# (Neste momento pode surgir um inimigo que persegue o jogador por alguns segundos)
+
 
 Narrador: Para atacares, mantém pressionado (por meter). Evita os ataques dos inimigos.
 
@@ -15,7 +15,7 @@ Narrador: Bem feito... Agora, aproxima-te daquela caveira vermelha.
 
 Narrador: Quando estiveres perto de algo com o qual possas interagir, irás ver uma indicação. Pressiona [Espaço] para interagir.
 
-# (O jogador aproxima-se de uma Actionable e vê o label "Pressiona [Espaço]")
+
 
 Narrador: Boa. Irá haver momentos em que escolhas como esta definirão o teu destino.
 Narrador: Escolhe com sabedoria...

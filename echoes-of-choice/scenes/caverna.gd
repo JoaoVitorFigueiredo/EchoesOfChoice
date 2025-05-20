@@ -1,7 +1,8 @@
 extends Node2D
+var current_scene = Global.current_scene
 
 func _ready():
-	if Global.key_found:
+	if Global.keys[current_scene]:
 		print("Tens a chave! Podes entrar na arena do chefe.")
 	else:
 		print("Precisas da chave para entrar na arena do chefe.")
@@ -14,7 +15,7 @@ func _ready():
 func _process(delta):
 	change_scene()
 
-# Quando o jogador entra na área da saída da caverna (para a cidade)
+#Quando o jogador entra na área da saída da caverna (para a cidade)
 func _on_caverna_exit_point_body_entered(body):
 	if body.has_method("player") and body.is_in_group("player"):
 		print("Jogador entrou na saída da caverna.")
@@ -31,7 +32,7 @@ func _on_caverna_exit_point_body_exited(body):
 func _on_boss_enter_point_body_entered(body):
 	if body.has_method("player") and body.is_in_group("player"):
 		print("Jogador entrou na entrada da arena do chefe.")
-		if Global.key_found:  # Verificar se o jogador tem a chave
+		if Global.keys[current_scene]:  # Verificar se o jogador tem a chave
 			Global.transition_scene = true
 			Global.target_scene = "boss_arena"  # Definir o destino como arena do boss
 		else:

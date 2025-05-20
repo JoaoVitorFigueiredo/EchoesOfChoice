@@ -150,13 +150,21 @@ func _type_next(delta: float, seconds_needed: float) -> void:
 	else:
 		visible_characters += 1
 		if visible_characters <= get_total_character_count():
-			spoke.emit(get_parsed_text()[visible_characters - 1], visible_characters - 1, _get_speed(visible_characters))
-		# See if there's time to type out some more in this frame
-		seconds_needed += seconds_per_step * (1.0 / _get_speed(visible_characters))
-		if seconds_needed > delta:
-			_waiting_seconds += seconds_needed
-		else:
-			_type_next(delta, seconds_needed)
+			var char = get_parsed_text()[visible_characters - 1]
+			spoke.emit(char, visible_characters - 1, _get_speed(visible_characters))
+
+			# Toca som apenas se for uma letra "real"
+			if char.length() > 0 and char != " " and not char in [".", ",", "!", "?", ":"]:
+				AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.text_sound)
+
+
+			# See if there's time to type out some more in this frame
+			seconds_needed += seconds_per_step * (1.0 / _get_speed(visible_characters))
+			if seconds_needed > delta:
+				_waiting_seconds += seconds_needed
+			else:
+				_type_next(delta, seconds_needed)
+
 
 
 # Get the pause for the current typing position if there is one

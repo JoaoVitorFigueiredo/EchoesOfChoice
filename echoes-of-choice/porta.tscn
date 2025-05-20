@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://s4pltr6apo0t" path="res://art/wood.png" id="2_wd3ri"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_417jq"]
-size = Vector2(9.21875, 19)
+size = Vector2(11, 19)
 
 [node name="porta" type="Node2D"]
 script = ExtResource("1_2elte")
@@ -28,7 +28,7 @@ scale = Vector2(0.277343, 0.367187)
 texture = ExtResource("2_wd3ri")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tabua_e"]
-position = Vector2(-0.6875, 1)
+position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_417jq")
 one_way_collision_margin = 0.0
 
@@ -39,7 +39,7 @@ collision_mask = 2
 collision_mask = 2
 
 [node name="static" type="CollisionShape2D" parent="tabua_e2/StaticBody2D"]
-position = Vector2(1, 19)
+position = Vector2(-0.195313, 19)
 shape = SubResource("RectangleShape2D_417jq")
 one_way_collision_margin = 0.0
 
@@ -49,7 +49,7 @@ scale = Vector2(0.277343, 0.367187)
 texture = ExtResource("2_wd3ri")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tabua_e2"]
-position = Vector2(-0.390625, 19)
+position = Vector2(0.5, 19)
 shape = SubResource("RectangleShape2D_417jq")
 
 [node name="tabua_e3" type="Area2D" parent="."]

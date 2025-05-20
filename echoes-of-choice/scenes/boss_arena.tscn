@@ -34,5 +34,11 @@ collision_mask = 2
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_5iw5k")
 
+[node name="colisions" type="StaticBody2D" parent="."]
+position = Vector2(-126, -181)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="colisions"]
+polygon = PackedVector2Array(368, 360, 368, 419, 346, 419, 320, 436, 321, 546, 332, 547, 345, 561, 354, 563, 414, 562, 427, 545, 428, 513, 439, 500, 534, 499, 546, 531, 545, 609, 732, 610, 744, 592, 797, 594, 808, 578, 828, 577, 843, 561, 844, 388, 814, 385, 800, 371, 791, 374, 608, 373, 593, 363, 571, 365, 546, 374, 542, 452, 524, 457, 437, 454, 427, 440, 426, 416, 415, 421, 385, 420, 380, 404, 380, 359, 828, 303, 930, 500, 830, 653, 285, 607, 304, 367)
+
 [connection signal="body_entered" from="caverna_exit_point" to="." method="_on_caverna_exit_point_body_entered"]
 [connection signal="body_exited" from="caverna_exit_point" to="." method="_on_caverna_exit_point_body_exited"]

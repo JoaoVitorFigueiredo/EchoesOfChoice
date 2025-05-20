@@ -1,13 +1,16 @@
 extends Node
 
-var key_found = false
+var keys = {
+	"cidade": false,
+	"caverna": false
+}
 var player_current_attack = false
 var current_scene = "cidade" # cidade, caverna, boss_arena
 var transition_scene = false
-var target_scene = ""  # Destino da transição
+var target_scene = ""  
 var last_scene = ""
 
-# Posições do jogador ao entrar/sair de cenas
+#Posições do jogador ao entrar/sair de cenas
 var player_exit_caverna_ladder_posx = 107
 var player_exit_caverna_ladder_posy = 282
 
@@ -22,7 +25,7 @@ var player_return_from_boss_caverna_posy = 510
 
 var game_first_loadin = true
 
-func finish_changescenes():
+func finish_changescenes():#Transição de cenas
 	if transition_scene:
 		transition_scene = false
 		match target_scene:
@@ -36,6 +39,3 @@ func finish_changescenes():
 				current_scene = "boss_arena"
 				print("Transição para a Arena do Boss")
 		target_scene = ""
-
-
-			

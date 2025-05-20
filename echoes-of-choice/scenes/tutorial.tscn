@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddjqnbdb7jo6x"]
+[gd_scene load_steps=5 format=3 uid="uid://ddjqnbdb7jo6x"]
 
 [ext_resource type="TileSet" uid="uid://sr1ynep0xkxu" path="res://scenes/Cidade.tres" id="1_g75tx"]
 [ext_resource type="PackedScene" uid="uid://bsdf0aw0u3puc" path="res://scenes/player.tscn" id="2_dvgij"]
+[ext_resource type="PackedScene" uid="uid://bfxf50v3u0omb" path="res://scenes/key.tscn" id="3_4kmhl"]
+[ext_resource type="PackedScene" uid="uid://bmsq1af3dh686" path="res://porta.tscn" id="4_cq4me"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -18,3 +20,12 @@ layer_2/tile_data = PackedInt32Array(-65536, 1179648, 24, -65535, 1179648, 24, -
 [node name="player" parent="." instance=ExtResource("2_dvgij")]
 y_sort_enabled = true
 position = Vector2(59, 136)
+
+[node name="key" parent="." instance=ExtResource("3_4kmhl")]
+position = Vector2(935, 75)
+
+[node name="porta" parent="." instance=ExtResource("4_cq4me")]
+position = Vector2(1508, 107)
+
+[node name="porta2" parent="." instance=ExtResource("4_cq4me")]
+position = Vector2(1508, 160)
