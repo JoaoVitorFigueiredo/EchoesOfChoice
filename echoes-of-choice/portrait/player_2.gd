@@ -41,13 +41,6 @@ func _on_knife_hit(area: Area2D):
 		else:
 			enemy_hit.take_damage(knife_damage)
 
-@onready var karma_bar = $Camera2D/CanvasLayer/KarmaBar
-var karma = 50
-
-func change_karma(amount:int):
-	karma += amount
-	karma_bar.value = karma
-
 func _on_animation_finished():
 	if animation_player.animation == "attack":
 		print("attack end")
@@ -60,6 +53,13 @@ func take_damage(amount: int):
 	health_bar.value = health * 100 / max_health
 	if health <= 0:
 		die()
+
+@onready var karma_bar = $Camera2D/CanvasLayer/KarmaBar
+var karma = 50
+
+func change_karma(amount:int):
+	karma += amount
+	karma_bar.value = karma
 
 func die():
 	print("Jogador morreu")

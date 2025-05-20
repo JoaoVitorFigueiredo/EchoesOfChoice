@@ -4,7 +4,7 @@ var speed = 50
 @export var health := 50
 var max_health = 50
 
-var action = 2 # 0 -> patrulha ; 1 -> perseguição ; 2 -> voltando pro lugar da patrulha
+var action = 0 # 0 -> patrulha ; 1 -> perseguição ; 2 -> voltando pro lugar da patrulha
 var player = null
 var player_last_known_location = null
 var curr_dir = null
@@ -33,13 +33,27 @@ func _ready():
 	
 	health = max_health
 
+var directions = [Vector2.DOWN, Vector2.LEFT, Vector2.UP, Vector2.RIGHT]
+var direction_index = 0
+@export var direction_change_interval := 2.0  # seconds between turns
+var direction_timer := 0.0
+
 func _physics_process(delta):
-	
 	match action:
 		0:
-			print(action)	
-			velocity.x = 0
-			velocity.y = 0
+			direction_timer += delta
+			if direction_timer >= direction_change_interval:
+				direction_timer = 0.0
+				direction_index = (direction_index + 1) % directions.size()
+				
+				# Set new velocity in the new direction
+				curr_dir = directions[direction_index]
+				velocity = curr_dir * speed
+
+				# Optionally update the RayCast or any other directional component
+			else:
+				# Stop moving between direction changes
+				velocity = Vector2.ZERO
 			
 
 		1:
@@ -95,21 +109,20 @@ func _on_vision_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.
 
 func play_animation(movement):
-	var dir = curr_dir
+	if curr_dir == Vector2.RIGHT:
+		anim.flip_h = false
+	elif curr_dir == Vector2.LEFT:
+		anim.flip_h = true
+	# Optional: handle up/down if you have separate animations
+	# elif curr_dir == Vector2.UP:
+	#     anim.play("walk_up") or use separate animations
+	# elif curr_dir == Vector2.DOWN:
+	#     anim.play("walk_down")
 	
-	if dir == "right":
-		anim.flip_h = false
-		if movement == 1:
-			anim.play("walk")
-		elif movement == 0:
-			anim.play("idle")
-			
+	if movement == 1:
+		anim.play("walk")
 	else:
-		anim.flip_h = false
-		if movement == 1:
-			anim.play("walk")
-		elif movement == 0:
-			anim.play("idle")
+		anim.play("idle")
 
 func chase():
 	var distance_to_player = position.distance_to(player.position)

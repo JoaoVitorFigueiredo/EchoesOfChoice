@@ -59,8 +59,12 @@ collision_mask = 2
 [node name="caverna_colision" type="CollisionShape2D" parent="caverna"]
 shape = SubResource("RectangleShape2D_mqfj4")
 
+[node name="goblin" parent="." instance=ExtResource("4_owbrk")]
+position = Vector2(1012, 93.0001)
+rotation = 0.00930226
+
 [node name="goblin3" parent="." instance=ExtResource("4_owbrk")]
-position = Vector2(72, 23)
+position = Vector2(308, 37)
 rotation = -0.0166651
 
 [node name="goblin2" parent="." instance=ExtResource("4_owbrk")]
@@ -71,8 +75,9 @@ rotation = 0.00465113
 position = Vector2(395, 165)
 rotation = 0.00930226
 
-[node name="goblin" parent="goblin4" instance=ExtResource("4_owbrk")]
-position = Vector2(616.304, -77.7362)
+[node name="goblin5" parent="." instance=ExtResource("4_owbrk")]
+position = Vector2(419, 509)
+rotation = 0.00930226
 
 [node name="intro_action" parent="." instance=ExtResource("6_c16ls")]
 position = Vector2(269, 23)
@@ -92,6 +97,25 @@ visibility_layer = 2
 position = Vector2(-208, -28)
 shape = SubResource("RectangleShape2D_18nlu")
 
+[node name="intro_action2" parent="." instance=ExtResource("6_c16ls")]
+position = Vector2(269, 23)
+dialogue_resource = ExtResource("9_6wevv")
+dialogue_start = ""
+interaction_text = "Falar com o prefeito"
+
+[node name="panel_botão" parent="intro_action2" instance=ExtResource("8_18nlu")]
+z_index = 1
+offset_left = 971.0
+offset_top = 67.0
+offset_right = 971.0
+offset_bottom = 67.0
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="intro_action2"]
+visibility_layer = 2
+position = Vector2(982, 128)
+shape = SubResource("RectangleShape2D_18nlu")
+
 [node name="intro_action5" parent="." instance=ExtResource("6_c16ls")]
 position = Vector2(269, 23)
 dialogue_resource = ExtResource("9_r6p65")
@@ -100,33 +124,14 @@ interaction_text = "Casa trancada"
 
 [node name="panel_botão" parent="intro_action5" instance=ExtResource("8_18nlu")]
 offset_left = 233.0
-offset_top = -57.0
+offset_top = -71.0
 offset_right = 233.0
-offset_bottom = -57.0
+offset_bottom = -71.0
 scale = Vector2(0.2, 0.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="intro_action5"]
 visibility_layer = 2
 position = Vector2(233, -32)
-shape = SubResource("RectangleShape2D_18nlu")
-
-[node name="intro_action2" parent="." instance=ExtResource("6_c16ls")]
-position = Vector2(269, 23)
-dialogue_resource = ExtResource("9_6wevv")
-dialogue_start = ""
-interaction_text = "Falar com o prefeito"
-
-[node name="panel_botão" parent="intro_action2" instance=ExtResource("8_18nlu")]
-top_level = true
-offset_left = 1127.0
-offset_top = 54.0
-offset_right = 1127.0
-offset_bottom = 54.0
-scale = Vector2(0.2, 0.2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="intro_action2"]
-visibility_layer = 2
-position = Vector2(982, 128)
 shape = SubResource("RectangleShape2D_18nlu")
 
 [node name="intro_action6" parent="." instance=ExtResource("6_c16ls")]
@@ -136,11 +141,11 @@ dialogue_start = ""
 interaction_text = "Casa do Shadow"
 
 [node name="panel_botão" parent="intro_action6" instance=ExtResource("8_18nlu")]
-top_level = true
-offset_left = 741.0
-offset_top = 263.0
-offset_right = 741.0
-offset_bottom = 263.0
+z_index = 1
+offset_left = 560.0
+offset_top = 287.0
+offset_right = 560.0
+offset_bottom = 287.0
 scale = Vector2(0.2, 0.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="intro_action6"]
@@ -155,11 +160,11 @@ dialogue_start = ""
 interaction_text = "Encontrei a chave"
 
 [node name="panel_botão" parent="intro_action3" instance=ExtResource("8_18nlu")]
-top_level = true
-offset_left = 1273.0
-offset_top = 416.0
-offset_right = 1273.0
-offset_bottom = 416.0
+z_index = 1
+offset_left = 1082.0
+offset_top = 432.0
+offset_right = 1082.0
+offset_bottom = 432.0
 scale = Vector2(0.2, 0.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="intro_action3"]
@@ -174,11 +179,11 @@ dialogue_start = ""
 interaction_text = "Cheguei a entrada"
 
 [node name="panel_botão" parent="intro_action4" instance=ExtResource("8_18nlu")]
-top_level = true
-offset_left = -36.0
-offset_top = 189.0
-offset_right = -36.0
-offset_bottom = 189.0
+z_index = 1
+offset_left = -176.0
+offset_top = 236.0
+offset_right = -176.0
+offset_bottom = 236.0
 scale = Vector2(0.2, 0.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="intro_action4"]
@@ -191,7 +196,7 @@ position = Vector2(172, 306)
 rotation = 3.14159
 
 [node name="perfeito" parent="." instance=ExtResource("13_4w45t")]
-position = Vector2(1251, 136)
+position = Vector2(1251, 132)
 
 [node name="colisions" type="StaticBody2D" parent="."]
 position = Vector2(-126, -181)
