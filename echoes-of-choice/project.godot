@@ -21,6 +21,7 @@ Global="*res://scenes/global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Key="*res://scenes/key.gd"
 AudioManager="*res://AudioManager.tscn"
+PlayerVars="*res://Player_vars.gd"
 
 [dialogue_manager]
 
