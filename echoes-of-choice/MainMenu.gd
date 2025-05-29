@@ -4,10 +4,9 @@ var center: Vector2
 @onready var node := $Control2  # O nó visual que vais mover
 
 func _ready():
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.intro, false)
 	%Play.pressed.connect(play)
 	%Quit.pressed.connect(quit_game)
-	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.intro, false)
-
 	update_center()
 
 	# Garante que se adapta quando a janela muda de tamanho (incluindo fullscreen)
