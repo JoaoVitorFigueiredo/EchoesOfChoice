@@ -16,13 +16,13 @@ Narrador: Lembre-se que as escolhas terão peso na sua jornada.
 	Shadow: *Encontra um colar em formato de coração, este parece carregado com algum tipo de energia.*
 	Shadow: *Ao colocar, sente-se mais forte.*
 	Narrador: Um saque valioso. Imbutido de magia antiga, este colar irá lhe garantir proteção em sua jornada.
-	#set points.max_health += 30
-	#do points.change_karma(-20)
+	set PlayerVars.max_health += 30
+	do PlayerVars.change_karma(-20)
 
 - Poupar (+ Karma)
 	Goblin: Obrigado! Obrigado! Obrigado! 
 	Goblin: *Lhe entrega um saco de ouro e sai a correr*
-	#do points.change_karma(20)
+	do PlayerVars.change_karma(20)
 
 Shadow: Espero que tenha feito a escolha correta...
 => END

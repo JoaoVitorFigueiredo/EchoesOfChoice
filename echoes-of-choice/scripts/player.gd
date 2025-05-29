@@ -1,11 +1,16 @@
 extends CharacterBody2D
 
 var curr_dir = "none"
-var speed =300
+
 var is_chased = false
 var n_chased = 0
-var health = 100
-var max_health = 100
+
+
+
+
+var speed 
+
+@onready var karma_bar = $Camera2D/CanvasLayer/KarmaBar
 
 
 @export var knife_damage := 10
@@ -19,9 +24,11 @@ func _ready():
 	knife_area.monitoring = false
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.walk_sound, true)
 	animation_player.animation_finished.connect(_on_animation_finished)
-	max_health = health
+	health_bar.value = PlayerVars.health
 
 var is_attacking = false
+
+
 
 func attack():
 	if is_attacking:
@@ -41,12 +48,7 @@ func _on_knife_hit(area: Area2D):
 		else:
 			enemy_hit.take_damage(knife_damage)
 
-@onready var karma_bar = $Camera2D/CanvasLayer/KarmaBar
-var karma = 50
 
-func change_karma(amount:int):
-	karma += amount
-	karma_bar.value = karma
 
 func _on_animation_finished():
 	if animation_player.animation == "attack":
@@ -55,10 +57,10 @@ func _on_animation_finished():
 		is_attacking = false
 
 func take_damage(amount: int):
-	health -= amount
-	print("Jogador levou", amount, "de dano. Vida restante:", health)
-	health_bar.value = health * 100 / max_health
-	if health <= 0:
+	PlayerVars.health -= amount
+	print("Jogador levou", amount, "de dano. Vida restante:", PlayerVars.health)
+	health_bar.value = PlayerVars.health * 100 / PlayerVars.max_health
+	if PlayerVars.health <= 0:
 		die()
 
 func die():
@@ -76,6 +78,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 
 func _process(delta):
+	karma_bar.value = PlayerVars.karma
+	
 	if is_chased and n_chased == 0:
 		is_chased = false
 	elif !is_chased and n_chased > 0:
@@ -84,6 +88,7 @@ func _process(delta):
 			attack()
 
 func _physics_process(delta):
+	speed = PlayerVars.speed
 	player_movement(delta)
 
 func player_movement(delta):
