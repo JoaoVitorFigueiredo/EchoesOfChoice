@@ -86,7 +86,7 @@ polygon = PackedVector2Array(1053, 371, 1038, 371, 1023, 378, 1015, 395, 1008, 4
 position = Vector2(163, 489)
 
 [node name="goblin2" parent="." instance=ExtResource("8_w6xs6")]
-position = Vector2(206, 276)
+position = Vector2(207, 325)
 
 [node name="goblin_informante" parent="." instance=ExtResource("9_iu580")]
 position = Vector2(505, 492)

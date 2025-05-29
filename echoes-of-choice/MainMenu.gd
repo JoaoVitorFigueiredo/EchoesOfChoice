@@ -6,6 +6,7 @@ var center: Vector2
 func _ready():
 	%Play.pressed.connect(play)
 	%Quit.pressed.connect(quit_game)
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.intro, false)
 
 	update_center()
 

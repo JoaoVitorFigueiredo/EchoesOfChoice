@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1a4a06quur5s"
-path="res://.godot/imported/Echoes of choice.png-2119e45a49fba1f2f1b98d2bb92258c6.ctex"
+path="res://.godot/imported/Echoes of choice.png-6a2cfa7a47602551603fa50a1dac7224.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sound/Echoes of choice.png"
-dest_files=["res://.godot/imported/Echoes of choice.png-2119e45a49fba1f2f1b98d2bb92258c6.ctex"]
+source_file="res://Echoes of choice.png"
+dest_files=["res://.godot/imported/Echoes of choice.png-6a2cfa7a47602551603fa50a1dac7224.ctex"]
 
 [params]
 

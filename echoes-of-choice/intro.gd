@@ -11,11 +11,20 @@ func _ready():
 	await get_tree().create_timer(6.0).timeout
 	anim_player.play("fadein")
 	await get_tree().create_timer(3.0).timeout
-	get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
+	get_tree().change_scene_to_file("res://scenes/tutorial.tscn")
 
 
 func update_position():
-	var center = get_viewport_rect().size / 2
-	if sprite != null:
-		sprite.position = center  # Para Sprite2D
-		# Ou: sprite.rect_position = center - sprite.rect_size / 2  # Se for Control/TextureRect
+	if sprite != null and sprite.texture != null:
+		var viewport_size = get_viewport_rect().size
+		var texture_size = sprite.texture.get_size()
+		
+		# Calcula o fator de escala necessário para preencher o ecrã
+		var scale_x = viewport_size.x / texture_size.x
+		var scale_y = viewport_size.y / texture_size.y
+		var scale = max(scale_x, scale_y)  # Preencher o ecrã sem deixar espaço
+
+		sprite.scale = Vector2(scale, scale)
+
+		# Centraliza o sprite no ecrã
+		sprite.position = viewport_size / 2

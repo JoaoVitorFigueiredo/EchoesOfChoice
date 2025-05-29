@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c7pta7vq72bra"]
+[gd_scene load_steps=25 format=3 uid="uid://c7pta7vq72bra"]
 
 [ext_resource type="Script" uid="uid://cqwm0quke63r2" path="res://audio_manager.gd" id="1_w2pua"]
 [ext_resource type="Script" uid="uid://cno4t5iawbp84" path="res://SoundEffectSetting.gd" id="2_yjd6q"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://dqkti8wxehw" path="res://sound/740145_fossarts_walk-grass-night-1 (online-audio-converter.com).mp3" id="10_5uxs8"]
 [ext_resource type="AudioStream" uid="uid://c0egt0ngxvwar" path="res://sound/KNIFE HIT 1 l SOUND EFFECT-yt.savetube.me (online-audio-converter.com).mp3" id="11_yjd6q"]
 [ext_resource type="AudioStream" uid="uid://dqrl62yun8aik" path="res://sound/467610_triqystudio_pickupitem (online-audio-converter.com).mp3" id="12_udwei"]
+[ext_resource type="AudioStream" uid="uid://dq8dm5dnq0myk" path="res://sound/guitar-intro-110935.mp3" id="13_58b0s"]
 
 [sub_resource type="Resource" id="Resource_dh53w"]
 resource_name = "knife_slash"
@@ -124,6 +125,16 @@ pitch_scale = 1.0
 pitch_randomness = 0.0
 metadata/_custom_type_script = "uid://cno4t5iawbp84"
 
+[sub_resource type="Resource" id="Resource_dxjv2"]
+script = ExtResource("2_yjd6q")
+limit = 5
+type = 10
+sound_effect = ExtResource("13_58b0s")
+volume = 0.0
+pitch_scale = 1.0
+pitch_randomness = 0.0
+metadata/_custom_type_script = "uid://cno4t5iawbp84"
+
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_w2pua")
-sound_effects = Array[ExtResource("2_yjd6q")]([SubResource("Resource_dh53w"), SubResource("Resource_lkvy2"), SubResource("Resource_3kt5d"), SubResource("Resource_j3vhd"), SubResource("Resource_hbsr6"), SubResource("Resource_4e8qr"), SubResource("Resource_dxymw"), SubResource("Resource_whmke"), SubResource("Resource_udwei"), SubResource("Resource_58b0s")])
+sound_effects = Array[ExtResource("2_yjd6q")]([SubResource("Resource_dh53w"), SubResource("Resource_lkvy2"), SubResource("Resource_3kt5d"), SubResource("Resource_j3vhd"), SubResource("Resource_hbsr6"), SubResource("Resource_4e8qr"), SubResource("Resource_dxymw"), SubResource("Resource_whmke"), SubResource("Resource_udwei"), SubResource("Resource_58b0s"), SubResource("Resource_dxjv2")])

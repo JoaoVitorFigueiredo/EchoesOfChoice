@@ -2,6 +2,7 @@ extends Node2D
 
 func _ready():
 	print("Estás na arena do chefe.")
+	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.rocks_fall, true)
 
 func _process(delta):
 	change_scene()
