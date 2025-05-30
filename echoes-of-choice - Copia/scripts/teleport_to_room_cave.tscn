@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://txebtddb7tfi"]
+
+[ext_resource type="Script" uid="uid://cc7mxt2nyiqki" path="res://teleport_to_room_cave.gd" id="1_siwyq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f24bx"]
+size = Vector2(11, 11)
+
+[node name="teleport_to_room_cave" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_siwyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f24bx")
+
+[connection signal="body_entered" from="." to="." method="_on_TeleportEscadas_body_entered_key"]

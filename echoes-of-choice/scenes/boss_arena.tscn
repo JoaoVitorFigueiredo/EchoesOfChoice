@@ -1,11 +1,133 @@
-[gd_scene load_steps=5 format=3 uid="uid://hntvuvd4m2ip"]
+[gd_scene load_steps=26 format=3 uid="uid://hntvuvd4m2ip"]
 
 [ext_resource type="TileSet" uid="uid://c6jghmuxqv7c2" path="res://scenes/Caverna.tres" id="1_4jg7w"]
 [ext_resource type="Script" uid="uid://80tj8o5u4ivv" path="res://scenes/boss_arena.gd" id="1_mege2"]
 [ext_resource type="PackedScene" uid="uid://bsdf0aw0u3puc" path="res://scenes/player.tscn" id="2_i0sbv"]
+[ext_resource type="Script" uid="uid://dierganb3ha5k" path="res://scenes/boss.gd" id="4_6wr5o"]
+[ext_resource type="Texture2D" uid="uid://cy0caifhjw8w4" path="res://art/gobling_king/goblin_king_attack.png" id="5_vi6v3"]
+[ext_resource type="Texture2D" uid="uid://djilr8ymqk0ci" path="res://art/gobling_king/goblin_king_idle.png" id="6_cwigj"]
+[ext_resource type="Texture2D" uid="uid://c5h13tltl0116" path="res://art/gobling_king/goblin_king_walk.png" id="7_io3m0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5iw5k"]
 size = Vector2(20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85kei"]
+atlas = ExtResource("5_vi6v3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kitqk"]
+atlas = ExtResource("5_vi6v3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfnkn"]
+atlas = ExtResource("5_vi6v3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2r62o"]
+atlas = ExtResource("5_vi6v3")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncbpu"]
+atlas = ExtResource("5_vi6v3")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c56gl"]
+atlas = ExtResource("5_vi6v3")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhtao"]
+atlas = ExtResource("6_cwigj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w701h"]
+atlas = ExtResource("6_cwigj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_678n3"]
+atlas = ExtResource("6_cwigj")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frdq4"]
+atlas = ExtResource("7_io3m0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbni2"]
+atlas = ExtResource("7_io3m0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uj30"]
+atlas = ExtResource("7_io3m0")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nthc0"]
+atlas = ExtResource("7_io3m0")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i50kd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85kei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kitqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfnkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2r62o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncbpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c56gl")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhtao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w701h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_678n3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frdq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbni2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uj30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nthc0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlvdt"]
+size = Vector2(53, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pd8li"]
+size = Vector2(64, 71)
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_rnigd"]
+points = PackedVector2Array(-11, -13, 93, -46, 93, 49, -12, 10)
 
 [node name="boss" type="Node2D"]
 script = ExtResource("1_mege2")
@@ -25,6 +147,7 @@ layer_3/tile_data = PackedInt32Array(589854, 65536, 7, 589856, 65536, 7, 655391,
 [node name="player" parent="." instance=ExtResource("2_i0sbv")]
 y_sort_enabled = true
 position = Vector2(247, 237)
+collision_mask = 1
 
 [node name="caverna_exit_point" type="Area2D" parent="."]
 position = Vector2(246, 234)
@@ -36,9 +159,63 @@ shape = SubResource("RectangleShape2D_5iw5k")
 
 [node name="colisions" type="StaticBody2D" parent="."]
 position = Vector2(-126, -181)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="colisions"]
 polygon = PackedVector2Array(368, 360, 368, 419, 346, 419, 320, 436, 321, 546, 332, 547, 345, 561, 354, 563, 414, 562, 427, 545, 428, 513, 439, 500, 534, 499, 546, 531, 545, 609, 732, 610, 744, 592, 797, 594, 808, 578, 828, 577, 843, 561, 844, 388, 814, 385, 800, 371, 791, 374, 608, 373, 593, 363, 571, 365, 546, 374, 542, 452, 524, 457, 437, 454, 427, 440, 426, 416, 415, 421, 385, 420, 380, 404, 380, 359, 828, 303, 930, 500, 830, 653, 285, 607, 304, 367)
 
+[node name="Boss" type="CharacterBody2D" parent="."]
+position = Vector2(626, 300)
+collision_mask = 0
+script = ExtResource("4_6wr5o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Boss"]
+position = Vector2(1, -18)
+scale = Vector2(1.59375, 1.6875)
+sprite_frames = SubResource("SpriteFrames_i50kd")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_tlvdt")
+
+[node name="RayCast2D" type="RayCast2D" parent="Boss"]
+position = Vector2(-2, 6)
+target_position = Vector2(8, 1)
+collision_mask = 8
+
+[node name="vision_indicator" type="Polygon2D" parent="Boss"]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 0.54902)
+rotation = 2.20027
+polygon = PackedVector2Array(4, 11, 2, -3, 52, 44, 3, 25)
+
+[node name="hitbox" type="Area2D" parent="Boss" groups=["enemies"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/hitbox"]
+shape = SubResource("RectangleShape2D_pd8li")
+
+[node name="HealthBar" type="ProgressBar" parent="Boss"]
+self_modulate = Color(0, 1, 0, 1)
+offset_left = -24.0
+offset_top = 39.0
+offset_right = 12.0
+offset_bottom = 47.0
+scale = Vector2(1.44865, 1)
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="FirstAtack" type="Area2D" parent="Boss"]
+position = Vector2(-1, 4)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/FirstAtack"]
+position = Vector2(1, -4)
+rotation = -6.295
+shape = SubResource("ConvexPolygonShape2D_rnigd")
+
 [connection signal="body_entered" from="caverna_exit_point" to="." method="_on_caverna_exit_point_body_entered"]
 [connection signal="body_exited" from="caverna_exit_point" to="." method="_on_caverna_exit_point_body_exited"]
+[connection signal="animation_finished" from="Boss/AnimatedSprite2D" to="Boss" method="_on_animated_sprite_2d_animation_finished"]

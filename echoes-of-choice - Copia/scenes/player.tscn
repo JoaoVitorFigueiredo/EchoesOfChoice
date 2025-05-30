@@ -1,0 +1,200 @@
+[gd_scene load_steps=25 format=3 uid="uid://bsdf0aw0u3puc"]
+
+[ext_resource type="Script" uid="uid://bryrpl5q1eh0f" path="res://scripts/player.gd" id="1_p6u7x"]
+[ext_resource type="Texture2D" uid="uid://dh711q4v657lg" path="res://art/shadow/shadow_hidle.png" id="2_823mn"]
+[ext_resource type="Texture2D" uid="uid://b4luph60t4w7y" path="res://art/shadow/new_attack/shadow_attack_0002.png" id="2_lgre4"]
+[ext_resource type="Texture2D" uid="uid://benej7cnef8h8" path="res://art/shadow/shadow_walk_2.png" id="3_3cisu"]
+[ext_resource type="Texture2D" uid="uid://tg6487thvvtt" path="res://art/shadow/new_attack/shadow_attack_0003.png" id="3_vkm5y"]
+[ext_resource type="Texture2D" uid="uid://x4rr8q7u7k3f" path="res://art/shadow/new_attack/shadow_attack_0004.png" id="4_og4hu"]
+[ext_resource type="Texture2D" uid="uid://uqom6q4brlk7" path="res://art/shadow/new_attack/shadow_attack_0007.png" id="5_cia85"]
+[ext_resource type="Texture2D" uid="uid://cknualxg15iio" path="res://art/shadow/new_attack/shadow_attack_0006.png" id="6_2db1s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_smehm"]
+radius = 18.7142
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_smehm"]
+blend_mode = 4
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3f68"]
+atlas = ExtResource("2_823mn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8ac3"]
+atlas = ExtResource("2_823mn")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1cdi"]
+atlas = ExtResource("2_823mn")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt0gn"]
+atlas = ExtResource("2_823mn")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57njw"]
+atlas = ExtResource("2_823mn")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ihpv"]
+atlas = ExtResource("3_3cisu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o0m3"]
+atlas = ExtResource("3_3cisu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfrd2"]
+atlas = ExtResource("3_3cisu")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie6lh"]
+atlas = ExtResource("3_3cisu")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ny8s1"]
+atlas = ExtResource("3_3cisu")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hw0r"]
+atlas = ExtResource("3_3cisu")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g0s4s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_og4hu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cia85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2db1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vkm5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lgre4")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3f68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8ac3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1cdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt0gn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57njw")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ihpv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o0m3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfrd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie6lh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ny8s1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hw0r")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hid0g"]
+size = Vector2(39.7236, 20.0055)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crrdo"]
+size = Vector2(20, 16)
+
+[node name="player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(48, 43)
+scale = Vector2(0.75, 0.75)
+collision_layer = 3
+script = ExtResource("1_p6u7x")
+
+[node name="Direction" type="Marker2D" parent="."]
+position = Vector2(0, 20)
+
+[node name="dialogue" type="Area2D" parent="Direction"]
+position = Vector2(0, -20)
+collision_layer = 0
+collision_mask = 16
+
+[node name="dialogue_colision" type="CollisionShape2D" parent="Direction/dialogue"]
+position = Vector2(2.66667, 10.6667)
+shape = SubResource("CircleShape2D_smehm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 20)
+zoom = Vector2(2.5, 2.5)
+limit_left = -176
+limit_top = -313
+limit_right = 1500
+limit_bottom = 698
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="HealthBar" type="ProgressBar" parent="Camera2D/CanvasLayer"]
+self_modulate = Color(0, 1, 0.388235, 1)
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 158.0
+offset_bottom = 37.0
+value = 100.0
+show_percentage = false
+
+[node name="KarmaBar" type="ProgressBar" parent="Camera2D/CanvasLayer"]
+material = SubResource("CanvasItemMaterial_smehm")
+offset_left = 13.0
+offset_top = 43.0
+offset_right = 159.0
+offset_bottom = 70.0
+value = 50.0
+show_percentage = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g0s4s")
+animation = &"attack"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
+y_sort_enabled = true
+position = Vector2(0, 20)
+scale = Vector2(0.8, 0.8)
+skew = -0.0331614
+shape = SubResource("RectangleShape2D_hid0g")
+
+[node name="knife_area" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="knife_area"]
+position = Vector2(25.3333, 13.3333)
+shape = SubResource("RectangleShape2D_crrdo")

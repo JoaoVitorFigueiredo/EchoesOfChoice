@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dhccivic06j8w"
+path="res://.godot/imported/perfeito.dialogue-f97cd86600fadc3f80d8c63c7b9ec1ac.tres"
+
+[deps]
+
+source_file="res://dialogos/perfeito.dialogue"
+dest_files=["res://.godot/imported/perfeito.dialogue-f97cd86600fadc3f80d8c63c7b9ec1ac.tres"]
+
+[params]
+
+defaults=true

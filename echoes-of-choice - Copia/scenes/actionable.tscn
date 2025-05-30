@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://64o3uucxde04"]
+
+[ext_resource type="Script" uid="uid://cl6452ge1qvt0" path="res://actionable.gd" id="1_8suh7"]
+
+[node name="actionable" type="Area2D"]
+collision_mask = 18
+script = ExtResource("1_8suh7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

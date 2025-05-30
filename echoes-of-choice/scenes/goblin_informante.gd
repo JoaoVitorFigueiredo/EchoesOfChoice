@@ -193,6 +193,7 @@ func take_damage(amount: int):
 	if health <= 0:
 		die()
 
+
 func die():
 	print(dialogue_resource)
 	if dialogue_resource:

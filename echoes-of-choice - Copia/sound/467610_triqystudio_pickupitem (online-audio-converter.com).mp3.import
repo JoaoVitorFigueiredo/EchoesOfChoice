@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqrl62yun8aik"
+path="res://.godot/imported/467610_triqystudio_pickupitem (online-audio-converter.com).mp3-abcaacadaeba86f481a50fc51760edcd.mp3str"
+
+[deps]
+
+source_file="res://sound/467610_triqystudio_pickupitem (online-audio-converter.com).mp3"
+dest_files=["res://.godot/imported/467610_triqystudio_pickupitem (online-audio-converter.com).mp3-abcaacadaeba86f481a50fc51760edcd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

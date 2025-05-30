@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://boa2th1l4g5qw"
+path="res://.godot/imported/casa_shadow.dialogue-de77492f97c77cf5f05bc6392dd3ba7e.tres"
+
+[deps]
+
+source_file="res://dialogos/casa_shadow.dialogue"
+dest_files=["res://.godot/imported/casa_shadow.dialogue-de77492f97c77cf5f05bc6392dd3ba7e.tres"]
+
+[params]
+
+defaults=true

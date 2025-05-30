@@ -1,0 +1,12 @@
+~ dying_boss
+Narrador: A jornada do nosso herói é marcada por diversas escolhas. Estas escolhas irão marcar não só seu percurso, mas também seu próprio caráter.
+Narrador: Escolha com cautela o caminho que irá trilhar.
+
+if PlayerVars.karma <  50:
+	- MATAR
+		=> positive_karma_intervention
+	- POUPAR
+		
+~ positive_karma_intervention
+
+=> END

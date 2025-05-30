@@ -135,6 +135,7 @@ size = Vector2(20, 16)
 position = Vector2(48, 43)
 scale = Vector2(0.75, 0.75)
 collision_layer = 3
+collision_mask = 0
 script = ExtResource("1_p6u7x")
 
 [node name="Direction" type="Marker2D" parent="."]

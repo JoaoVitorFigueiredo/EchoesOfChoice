@@ -52,7 +52,6 @@ func _on_knife_hit(area: Area2D):
 
 func _on_animation_finished():
 	if animation_player.animation == "attack":
-		print("attack end")
 		knife_area.monitoring = false
 		is_attacking = false
 

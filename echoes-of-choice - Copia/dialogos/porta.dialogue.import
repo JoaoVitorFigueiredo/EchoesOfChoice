@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cigkwwdpv1c6s"
+path="res://.godot/imported/porta.dialogue-61083f373055e48612d2d524cac1a631.tres"
+
+[deps]
+
+source_file="res://dialogos/porta.dialogue"
+dest_files=["res://.godot/imported/porta.dialogue-61083f373055e48612d2d524cac1a631.tres"]
+
+[params]
+
+defaults=true

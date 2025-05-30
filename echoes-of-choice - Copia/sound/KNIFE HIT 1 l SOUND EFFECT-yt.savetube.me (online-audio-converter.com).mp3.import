@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0egt0ngxvwar"
+path="res://.godot/imported/KNIFE HIT 1 l SOUND EFFECT-yt.savetube.me (online-audio-converter.com).mp3-3846335648679f25f087ec5533cd3025.mp3str"
+
+[deps]
+
+source_file="res://sound/KNIFE HIT 1 l SOUND EFFECT-yt.savetube.me (online-audio-converter.com).mp3"
+dest_files=["res://.godot/imported/KNIFE HIT 1 l SOUND EFFECT-yt.savetube.me (online-audio-converter.com).mp3-3846335648679f25f087ec5533cd3025.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
