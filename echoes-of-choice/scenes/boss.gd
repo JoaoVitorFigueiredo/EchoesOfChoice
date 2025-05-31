@@ -34,15 +34,10 @@ var can_attack := true
 @onready var health_bar = $HealthBar
 
 func play_animation(movement):
-	if curr_dir == Vector2.RIGHT:
-		anim.flip_h = false
-	elif curr_dir == Vector2.LEFT:
-		anim.flip_h = true
-	# Optional: handle up/down if you have separate animations
-	# elif curr_dir == Vector2.UP:
-	#     anim.play("walk_up") or use separate animations
-	# elif curr_dir == Vector2.DOWN:
-	#     anim.play("walk_down")
+	if velocity.x > 0:
+		anim.flip_h = false  # Moving right
+	elif velocity.x < 0:
+		anim.flip_h = true   # Moving left
 	
 	if movement == 1:
 		anim.play("walk")
@@ -122,13 +117,7 @@ func take_damage(damage):
 	if health <= 0:
 		die()
 
-@export var dialogue_resource: DialogueResource
-@export var dialogue_start: String = "final"
+
 func die():
-	print(dialogue_resource)
-	if dialogue_resource:
-		DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
-	else:
-		push_error("dialogue_resource não atribuído ao Goblin.")
-	queue_free()
+	get_tree().change_scene_to_file("res://scenes/cutscene_final.tscn")
 	

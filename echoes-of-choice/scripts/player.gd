@@ -64,7 +64,7 @@ func take_damage(amount: int):
 
 func die():
 	print("Jogador morreu")
-	# Adiciona lógica de game over ou respawn aqui
+	
 
 func player():
 	pass
