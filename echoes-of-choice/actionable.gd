@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var dialogue_resource: DialogueResource
+@export var dialogue_resource: DialogueResource 
 @export var dialogue_start: String = "intro"
 @export var auto_start: bool = true
 @export var interaction_text: String = "Interagir"

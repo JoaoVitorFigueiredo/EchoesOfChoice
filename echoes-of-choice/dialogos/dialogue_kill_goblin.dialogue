@@ -1,0 +1,31 @@
+~ positive_karma_intervention
+Narrador: Mas, de repente, uma brisa suave percorre o ambiente. Uma luz tênue se forma diante de Shadow.
+
+: Meu amor... não sigas por esse caminho.
+
+do  CutsceneFinal.show_scene()
+
+: A figura translúcida da esposa falecida de Shadow aparece, olhando com ternura e tristeza.
+
+Karma: Sei que a dor te consome, que a raiva quer te dominar... Mas o sangue derramado sem justiça só mancha a alma.
+
+KarmaPositivo: Ainda há esperança em ti, um caminho para a luz que não precisa passar pela morte de outro ser.
+
+: Shadow hesita, a espada tremendo na mão.
+
+Shadow: Mas ele...
+
+KarmaPositivo: Ele já sofre sua própria prisão, seu próprio tormento. Poupá-lo é preservar um pouco do que somos.
+
+: A luz cresce, envolvendo Shadow numa aura calma e quente.
+
+KarmaPositivo: Ouve teu coração. Não sejas a mão que perpetua o ciclo de dor.
+
+do CutsceneFinal.cutscene_manager.player_anim.play("idle")
+
+: Shadow abaixa a espada, sentindo uma paz profunda invadir seu ser.
+
+Narrador: O perdão nem sempre é fraqueza. Às vezes, é o maior ato de coragem que se pode ter.
+
+
+=> END

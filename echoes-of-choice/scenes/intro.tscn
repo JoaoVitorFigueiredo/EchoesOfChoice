@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxropjh6uakei"]
+[gd_scene load_steps=7 format=3 uid="uid://6tens6d0erpj"]
 
 [ext_resource type="Script" uid="uid://bx5vivyomclvy" path="res://intro.gd" id="1_yjqpq"]
 [ext_resource type="Texture2D" uid="uid://b1v3lvbu0u3lr" path="res://portrait/Echoes of choice.png" id="2_4bx60"]

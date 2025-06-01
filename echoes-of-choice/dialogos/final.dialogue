@@ -1,12 +1,57 @@
 ~ dying_boss
-Narrador: A jornada do nosso herói é marcada por diversas escolhas. Estas escolhas irão marcar não só seu percurso, mas também seu próprio caráter.
-Narrador: Escolha com cautela o caminho que irá trilhar.
+GoblinKing: Vá *****, me mate!
+GoblinKing: Me mate e me livre dessa vida de serviçal.
+GoblinKing: Me mate e viva essa tua vida medíocre sabendo que acabastes com todo um povo.
+GoblinKing: Esperava o que, que Eles fossem nos deixar vivos? Sem um líder os goblins já não são úteis, é só uma questão de tempo que sejamos varridos destas terras.
+Shadow: Calado! Me diga quem são Eles e podes sonhar com o dia de amanhã!
+GoblinKing: Queres que eu acredite nisso? Eu conheço a cara de um assassino quando vejo um!
+GoblinKing: Mas... se quer mesmo saber, eu conto. Eles vieram do norte. Sem rosto, sem nome. Apenas vozes... vozes na escuridão.
+GoblinKing: Prometeram poder. Prometeram liberdade. Mas tudo que nos deram foi correntes e ordens.
+GoblinKing: E eu... eu obedeci. Para salvar meu povo, eu me tornei um cão. E agora, até os ossos do meu orgulho foram roídos.
+GoblinKing: Então vá em frente, assassino. Termina o que começaste.
 
+Narrador: A jornada do nosso herói é marcada por diversas escolhas. Estas escolhas irão moldar não só seu percurso, mas também seu próprio caráter.
+Narrador: Escolha com cautela o caminho que irá trilhar.
+=> kill_choice
+
+
+~ kill_choice
 if PlayerVars.karma <  50:
 	- MATAR
 		=> positive_karma_intervention
 	- POUPAR
+		KarmaNegativo: Sem piedade!
+		: Seu karma está muito baixo para esta ação
+		=> kill_choice
+		
+		
+
+else:
+	- MATAR
+		KarmaPositivo: Eu sei que ainda há bondade em seu coração! Não deixe que eles acabem com ela, por favor!
+		: Seu karma está muito alto para esta ação
+		=> kill_choice
+		
+	- POUPAR
+		=> negative_karma_intervention
 		
 ~ positive_karma_intervention
-
+: Shadow ergue a faca, decidido a acabar com o O Rei Goblin.
+Shadow: Acaba aqui! Por todo o mal que fizeste, por todas as vidas perdidas!
+do CutsceneFinal.positive_karma_intervention()
 => END
+
+~ negative_karma_intervention
+Shadow: Te levanta. Hoje não é o dia em que morrerás.
+Shadow: Manda-os todos embora e volte pro buraco de onde veio!
+
+: Shadow vira-se de costas, sua silhueta estremece com a luz inconstante das tochas.
+
+Narrador: Há quem diga que poupar uma vida é um ato de coragem…  
+Narrador: Mas há aqueles que enxergam apenas fraqueza nesse gesto.
+
+: O Rei Goblin se ergue com dificuldade. Seu olhar é frio, decidido.
+GoblinKing: Misericórdia... é para os fracos.
+do CutsceneFinal.negative_karma_intervention()
+=> END
+

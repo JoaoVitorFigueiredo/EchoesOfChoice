@@ -195,7 +195,6 @@ func take_damage(amount: int):
 
 
 func die():
-	print(dialogue_resource)
 	if dialogue_resource:
 		DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
 	else:

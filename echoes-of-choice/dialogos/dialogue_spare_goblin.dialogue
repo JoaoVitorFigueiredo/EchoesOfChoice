@@ -1,0 +1,34 @@
+~ negative_karma_intervention
+
+: Subitamente, o ar estala com energia densa. Uma sombra se materializa ao lado do rei goblin, agarrando sua mão armada no ar com força descomunal.
+
+KarmaNegativo: Não tão rápido.
+
+do CutsceneFinal.show_scene()
+
+: Um estalo seco — seu ataque é interrompido e o rei permanece ali, imóvel.
+
+do CutsceneFinal.move_karma_negativo()
+
+KarmaNegativo: Tão nobre. Tão previsível.
+do CutsceneFinal.move_karma_negativo()
+
+KarmaNegativo: Acreditas mesmo que essa tua virtude vá te levar até ela? Até tua filha?
+do CutsceneFinal.move_karma_negativo()
+
+KarmaNegativo: Esse mundo não é feito para mártires, Shadow. É feito para os que sabem agir… mesmo quando isso exige sangue.
+do CutsceneFinal.move_karma_negativo()
+KarmaNegativo: Hoje foi só um verme desesperado. Mas amanhã? Amanhã será alguém mais rápido. Mais cruel.
+do CutsceneFinal.move_karma_negativo()
+KarmaNegativo: E aí? Vais continuar jogando o jogo deles com essas mãos limpas?
+
+do CutsceneFinal.stop_karma_negativo()
+: A entidade para à frente de Shadow, exibindo um sorriso desconfortável.
+
+KarmaNegativo: Tu já sabes a resposta. Eu só estou aqui para lembrar-te.
+do CutsceneFinal.hide_scene()
+: Ela desaparece em uma espiral de fumaça escura e com ela as luzes das tochas se apagam.
+
+: Shadow permanece parado, respirando fundo, de punho cerrado, encarando os olhos vermelhos na escuridão.
+
+=> END

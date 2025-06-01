@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cdmmg4dw0q6br"
+path="res://.godot/imported/dialogue_spare_goblin.dialogue-39120c0e7ff0490014a5a8db077b6dec.tres"
+
+[deps]
+
+source_file="res://dialogos/dialogue_spare_goblin.dialogue"
+dest_files=["res://.godot/imported/dialogue_spare_goblin.dialogue-39120c0e7ff0490014a5a8db077b6dec.tres"]
+
+[params]
+
+defaults=true

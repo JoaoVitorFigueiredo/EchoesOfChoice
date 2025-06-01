@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://p3k3w3dyt6n1"
+path="res://.godot/imported/dialogue_kill_goblin.dialogue-d406ec291204a2152ee33a21fc6fefda.tres"
+
+[deps]
+
+source_file="res://dialogos/dialogue_kill_goblin.dialogue"
+dest_files=["res://.godot/imported/dialogue_kill_goblin.dialogue-d406ec291204a2152ee33a21fc6fefda.tres"]
+
+[params]
+
+defaults=true
