@@ -11,7 +11,7 @@ func _ready():
 	await get_tree().create_timer(6.0).timeout
 	anim_player.play("fadein")
 	await get_tree().create_timer(3.0).timeout
-	get_tree().change_scene_to_file("res://scenes/tutorial.tscn")
+	get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
 
 
 func update_position():

@@ -25,5 +25,5 @@ func change_scene():
 		# Mudar para a cena correta dependendo do destino
 		if Global.target_scene == "cidade":
 			print("Mudando para a cidade (main_scene)...")
-			get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
+			get_tree().change_scene_to_file("res://scenes/control.tscn")
 		Global.finish_changescenes()

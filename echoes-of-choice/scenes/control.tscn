@@ -135,6 +135,12 @@ layout_mode = 2
 theme = ExtResource("1_2hvgp")
 text = "Play"
 
+[node name="Tutorial" type="Button" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_2hvgp")
+text = "Tutorial"
+
 [node name="Settings" type="Button" parent="CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2

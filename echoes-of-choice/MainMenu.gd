@@ -6,6 +6,8 @@ var center: Vector2
 func _ready():
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.intro, false)
 	%Play.pressed.connect(play)
+	%Tutorial.pressed.connect(tutorial)
+	%Settings.pressed.connect(settings)
 	%Quit.pressed.connect(quit_game)
 	update_center()
 
@@ -13,9 +15,19 @@ func _ready():
 	get_viewport().size_changed.connect(update_center)
 
 func play():
+	AudioManager.stop()
 	get_tree().change_scene_to_file("res://scenes/intro.tscn")
 	
+func tutorial():
+	AudioManager.stop()
+	get_tree().change_scene_to_file("res://scenes/tutorial.tscn")
+	
+func settings():
+	AudioManager.stop()
+	get_tree().change_scene_to_file("res://scenes/settings.tscn")
+	
 func quit_game():
+	AudioManager.stop()
 	get_tree().quit()
 
 func _process(_delta):
