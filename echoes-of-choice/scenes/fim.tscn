@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://1gsd65qrbd3w"]
+
+[ext_resource type="Script" uid="uid://beq1eptccti6x" path="res://fim.gd" id="1_li6y8"]
+[ext_resource type="VideoStream" uid="uid://ko51ucqc6dk3" path="res://video_creditos.ogv" id="2_o78ob"]
+
+[node name="Fim" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_li6y8")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_o78ob")
+autoplay = true

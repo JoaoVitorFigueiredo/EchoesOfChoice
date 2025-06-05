@@ -25,6 +25,7 @@ var player_return_from_boss_caverna_posy = 510
 
 var game_first_loadin = true
 
+
 func finish_changescenes():#Transição de cenas
 	if transition_scene:
 		transition_scene = false

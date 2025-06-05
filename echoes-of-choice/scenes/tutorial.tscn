@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddjqnbdb7jo6x"]
+[gd_scene load_steps=15 format=3 uid="uid://ddjqnbdb7jo6x"]
 
 [ext_resource type="Script" uid="uid://bbrb5cfac3en1" path="res://scenes/tutorial.gd" id="1_g2equ"]
 [ext_resource type="TileSet" uid="uid://sr1ynep0xkxu" path="res://scenes/Cidade.tres" id="1_g75tx"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cvf7cjb7yq7ad" path="res://scenes/panel_botão.tscn" id="8_g2equ"]
 [ext_resource type="Resource" uid="uid://n0bwhjfipyj0" path="res://tutorial_2.dialogue" id="9_0epgs"]
 [ext_resource type="Resource" uid="uid://bmq06ihc1kaq0" path="res://tutorial_3.dialogue" id="10_g2equ"]
+[ext_resource type="PackedScene" uid="uid://bhxlnwlgggaft" path="res://scenes/PauseMenu.tscn" id="12_tbcdj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbcdj"]
 size = Vector2(30, 22.75)
@@ -56,10 +57,10 @@ dialogue_start = ""
 interaction_text = "tutorial_inicio"
 
 [node name="panel_botão" parent="intro_action" instance=ExtResource("8_g2equ")]
-offset_left = -178.0
-offset_top = 94.0
-offset_right = -178.0
-offset_bottom = 94.0
+offset_left = -191.0
+offset_top = 89.0
+offset_right = -191.0
+offset_bottom = 89.0
 scale = Vector2(0.2, 0.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="intro_action"]
@@ -75,9 +76,9 @@ interaction_text = "tutorial_ataque"
 
 [node name="panel_botão" parent="intro_action2" instance=ExtResource("8_g2equ")]
 offset_left = 146.0
-offset_top = 98.0
+offset_top = 103.0
 offset_right = 146.0
-offset_bottom = 98.0
+offset_bottom = 103.0
 scale = Vector2(0.2, 0.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="intro_action2"]
@@ -93,9 +94,9 @@ interaction_text = "tutorial_chave"
 
 [node name="panel_botão" parent="intro_action3" instance=ExtResource("8_g2equ")]
 offset_left = 656.0
-offset_top = 20.0
+offset_top = 7.62939e-06
 offset_right = 656.0
-offset_bottom = 20.0
+offset_bottom = 7.62939e-06
 scale = Vector2(0.2, 0.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="intro_action3"]
@@ -110,6 +111,8 @@ collision_mask = 2
 [node name="CollisionCity" type="CollisionShape2D" parent="Cidade_enter"]
 position = Vector2(1457.5, 38)
 shape = SubResource("RectangleShape2D_0epgs")
+
+[node name="PauseMenu" parent="." instance=ExtResource("12_tbcdj")]
 
 [connection signal="body_entered" from="Cidade_enter" to="." method="_on_cidade_enter_body_entered"]
 [connection signal="body_exited" from="Cidade_enter" to="." method="_on_cidade_enter_body_exited"]

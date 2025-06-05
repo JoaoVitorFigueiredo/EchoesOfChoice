@@ -6,6 +6,7 @@ func _ready():
 
 func _process(delta):
 	change_scene()
+	
 
 # Quando o jogador entra na saída da arena (de volta para a caverna)
 func _on_caverna_exit_point_body_entered(body):
