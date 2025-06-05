@@ -1,11 +1,11 @@
 # TUTORIAL INICIAL
 
 ~ tutorial_inicio
-
+set PlayerVars.can_move = false
 Narrador: A noite cobre a cidade como um manto de silêncio... mas os teus passos estão prestes a quebrá-lo.
 Narrador: Usa as teclas [WASD] para te movimentares
 Narrador: Quando estiveres perto de algo com o qual possas interagir, irás ver uma indicação. Pressiona [Espaço] para interagir.
 Narrador: As caveiras vermelhas indicam sitios aonde podes interagir, segue as caveiras e conseguirás percorrer a tua história
 
-
+set PlayerVars.can_move = true
 

@@ -1,2 +1,4 @@
+set PlayerVars.can_move = false
 Shadow: Não tenho a chave...
 Shadow: Aonde é que ela está?
+set PlayerVars.can_move = true

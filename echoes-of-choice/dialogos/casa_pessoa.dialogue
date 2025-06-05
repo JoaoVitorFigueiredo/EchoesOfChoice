@@ -1,6 +1,9 @@
 ~ casa_pessoa
 
+set PlayerVars.can_move = false
 Habitante: Ei, não devias estar aqui.  
 Habitante: Se queres perceber o que se passa nesta cidade, segue pela rua.  
 Habitante: Há uma casa verde no fim… é lá que vive o prefeito.  
 Habitante: Vai falar com ele, talvez ele te diga o que realmente está a acontecer.
+
+set PlayerVars.can_move = true

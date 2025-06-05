@@ -1,4 +1,5 @@
 ~ Chave_encontrada
+set PlayerVars.can_move = false
 
 Habitante: Tens aqui a chave, com ela vais conseguir abrir a porta para o cemitério.
 Shadow: Obrigado...!
@@ -10,3 +11,4 @@ KarmaNegativo: A dor é a tua arma. Usa-a.
 
 KarmaPositivo: Não deixes que o ódio te consuma. Ainda há uma luz dentro de ti, por mais fraca que seja.  
 KarmaPositivo: A tua filha precisa de ti... inteiro, não corrompido.
+set PlayerVars.can_move = true
