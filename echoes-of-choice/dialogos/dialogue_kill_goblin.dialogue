@@ -1,4 +1,5 @@
 ~ positive_karma_intervention
+set PlayerVars.can_move = false
 Narrador: Mas, de repente, uma brisa suave percorre o ambiente. Uma luz tênue se forma diante de Shadow.
 
 : Meu amor... não sigas por esse caminho.
@@ -27,5 +28,6 @@ do CutsceneFinal.cutscene_manager.player_anim.play("idle")
 
 Narrador: O perdão nem sempre é fraqueza. Às vezes, é o maior ato de coragem que se pode ter.
 
+set PlayerVars.can_move = true
 
 => END

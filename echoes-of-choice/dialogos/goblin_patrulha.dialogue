@@ -1,10 +1,12 @@
 
 ~ LastHitOnGoblin 
 
-Goblin: Por favor, me poupe!
-Shadow: Porque eu haveria de fazer isto?
-Goblin: Nós fomos obrigados por eles a invadir, se não pagarmos o saque a morte pela tua faca é menos dolorosa.
-Goblin: Não estou a mentir, eu juto! Por favor, não me mate! Só quero voltar à minha familia.
+set PlayerVars.can_move = false
+
+Goblin: Por favor, não me mate!
+Shadow: Porque eu haveria de te deixar viver?
+Goblin: Nós fomos obrigados por eles a invadir! Se não pagarmos o saque, a morte pela tua faca é menos dolorosa.
+Goblin: Não estou a mentir, eu juro! Por favor, não me mate! Só quero voltar à minha familia.
 
 Narrador: Shadow enfrenta um dilema. 
 Narrador: Deixar o goblin voltar para a sua vida mesmo com todo o caos que causou?
@@ -13,10 +15,12 @@ Narrador: Lembre-se que as escolhas terão peso na sua jornada.
 
 - Matar (- Karma)
 	Shadow: Não quero saber! Vocês pagarão.
-	Shadow: *Encontra um colar em formato de coração, este parece carregado com algum tipo de energia.*
-	Shadow: *Ao colocar, sente-se mais forte.*
+	: *Shadow encontra um colar em formato de coração, este parece carregado com algum tipo de energia.*
+	: *Ao colocar, sente-se mais forte.*
 	Narrador: Um saque valioso. Imbutido de magia antiga, este colar irá lhe garantir proteção em sua jornada.
-	set PlayerVars.max_health += 30
+	: +50 de vida
+	set PlayerVars.max_health += 50
+	set PlayerVars.health +=50
 	do PlayerVars.change_karma(-20)
 
 - Poupar (+ Karma)
@@ -25,4 +29,5 @@ Narrador: Lembre-se que as escolhas terão peso na sua jornada.
 	do PlayerVars.change_karma(20)
 
 Shadow: Espero que tenha feito a escolha correta...
+set PlayerVars.can_move = true
 => END

@@ -7,3 +7,7 @@
 script = ExtResource("2_0euta")
 dialogue_resource = null
 dialogue_start = "LastHitOnGoblin"
+
+[node name="CollisionPolygon2D" parent="vision_patrol" index="0"]
+position = Vector2(-15, 1)
+rotation = 1.60696

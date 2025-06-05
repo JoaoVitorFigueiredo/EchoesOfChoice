@@ -91,7 +91,7 @@ func _physics_process(delta):
 	player_movement(delta)
 
 func player_movement(delta):
-	if not is_attacking:
+	if not is_attacking and PlayerVars.can_move:
 		if Input.is_action_pressed("move_right") and Input.is_action_pressed("move_up"):
 			curr_dir = "right"
 			play_animation(1)

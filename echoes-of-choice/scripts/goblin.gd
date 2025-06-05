@@ -72,7 +72,7 @@ func _physics_process(delta):
 		col_polygon.rotation = angle
 		visual_polygon.rotation = angle
 
-@onready var line = $Line2D
+
 var last_position
 var idle_time
 
@@ -81,7 +81,6 @@ func _process(delta):
 	if action == 1:
 		var start = Vector2.ZERO
 		var end = raycast.target_position
-		line.points = [start, end]
 	
 	# Check if enemy moved
 	if last_position and position.distance_to(last_position) < 1.0 and action == 1:

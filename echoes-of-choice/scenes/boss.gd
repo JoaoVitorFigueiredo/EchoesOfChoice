@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 var speed = 50
-@export var health := 50
-var max_health = 100
+@export var health := 10
+var max_health = 10
 
 var idle_time
 

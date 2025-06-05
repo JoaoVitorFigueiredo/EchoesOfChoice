@@ -4,6 +4,7 @@ var cutscene_manager
 
 func _ready() -> void:
 	cutscene_manager = $Node2D
+	
 
 
 func start_cutscene():

@@ -1,6 +1,7 @@
 # INTRODUÇÃO
 
 ~ intro
+set PlayerVars.can_move = false
 
 Narrador: Olá, viajante.  
 Narrador: Este é o início de uma jornada marcada por escolhas… e pelas cicatrizes que elas deixam.  
@@ -21,3 +22,4 @@ Narrador: Restou o vazio… e a dúvida.
 Narrador: Uma pergunta ecoa nos escombros da tua vida…  
 Narrador: Que tipo de homem és tu agora?
 
+set PlayerVars.can_move = true

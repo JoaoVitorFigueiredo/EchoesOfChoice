@@ -51,14 +51,6 @@ position = Vector2(312, 296)
 [node name="teleport_to_room_cave" parent="." instance=ExtResource("6_yw02a")]
 position = Vector2(936, 186)
 
-[node name="caverna_exit_point" type="Area2D" parent="."]
-position = Vector2(143, 118)
-collision_mask = 2
-
-[node name="CollisionCity" type="CollisionShape2D" parent="caverna_exit_point"]
-position = Vector2(1, -9)
-shape = SubResource("RectangleShape2D_cmny2")
-
 [node name="boss_enter_point" type="Area2D" parent="."]
 position = Vector2(504, 552)
 collision_mask = 2
@@ -71,6 +63,8 @@ position = Vector2(389, 455)
 
 [node name="colisions" type="StaticBody2D" parent="."]
 position = Vector2(-126, -181)
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="colisions"]
 position = Vector2(223.608, 338.086)
@@ -90,9 +84,9 @@ position = Vector2(207, 325)
 
 [node name="goblin_informante" parent="." instance=ExtResource("9_iu580")]
 position = Vector2(505, 492)
+collision_layer = 1
+collision_mask = 1
 dialogue_resource = ExtResource("10_om7a2")
 
-[connection signal="body_entered" from="caverna_exit_point" to="." method="_on_caverna_exit_point_body_entered"]
-[connection signal="body_exited" from="caverna_exit_point" to="." method="_on_caverna_exit_point_body_exited"]
 [connection signal="body_entered" from="boss_enter_point" to="." method="_on_boss_enter_point_body_entered"]
 [connection signal="body_exited" from="boss_enter_point" to="." method="_on_boss_enter_point_body_exited"]

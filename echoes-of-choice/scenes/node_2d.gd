@@ -24,6 +24,8 @@ extends Node2D
 	
 
 func _ready():
+	$CanvasLayer/HealthBar.value = PlayerVars.health * 100 / PlayerVars.max_health
+	$CanvasLayer/KarmaBar.value = PlayerVars.karma
 	boss_anim.play("idle")
 	k_negativo_anim.play("idle")
 	k_positivo_anim.play("idle")

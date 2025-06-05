@@ -1,4 +1,5 @@
 ~ prefeito_intro
+set PlayerVars.can_move = false
 Prefeito: Graças aos deuses, ainda estás vivo...
 Prefeito: A cidade... está em ruínas. Vieram do nada, como sombras na noite.
 Prefeito: Era para ser só mais um dia tranquilo, até que as muralhas ruíram ao som de tambores...
@@ -22,6 +23,8 @@ Prefeito: És o único com capacidades para lidar com isto.
 	=> prefeito_perguntas
 - Recusar ajuda
 	Prefeito: ...Entendo. Que não te arrependas dessa escolha.
+	
+	set PlayerVars.can_move = true
 	=> END
 
 
@@ -41,4 +44,5 @@ Prefeito: Talvez por vingança. Talvez por ordem de outros... Há rumores de uma
 ~ partida_busca_chave
 Shadow: Se for preciso atravessar a cidade em chamas, que assim seja. Onde está a chave?
 Prefeito: O batedor foi para o extremo leste da cidade. A chave ainda deve estar lá.
+set PlayerVars.can_move = true
 => END
