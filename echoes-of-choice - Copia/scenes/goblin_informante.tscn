@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4h80rjp2lit3"]
-
-[ext_resource type="PackedScene" uid="uid://col1t1hfqhsir" path="res://scenes/goblin.tscn" id="1_6dt3h"]
-[ext_resource type="Script" path="res://scenes/goblin_informante.gd" id="2_0euta"]
-
-[node name="goblin_informante" instance=ExtResource("1_6dt3h")]
-script = ExtResource("2_0euta")
-dialogue_resource = null
-dialogue_start = "LastHitOnGoblin"
