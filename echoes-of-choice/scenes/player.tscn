@@ -184,6 +184,8 @@ value = 50.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource("9_ur7pv")]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_g0s4s")
 animation = &"attack"
@@ -201,5 +203,3 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="knife_area"]
 position = Vector2(25.3333, 13.3333)
 shape = SubResource("RectangleShape2D_crrdo")
-
-[node name="PauseMenu" parent="." instance=ExtResource("9_ur7pv")]
