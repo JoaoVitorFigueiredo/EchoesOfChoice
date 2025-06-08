@@ -48,16 +48,10 @@ layout_mode = 2
 theme = ExtResource("2_g4jo0")
 text = "Continuar"
 
-[node name="Recomeçar" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_g4jo0")
-text = "Recomeçar"
-
 [node name="Sair" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_g4jo0")
 text = "Sair"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Recomeçar" to="." method="_on_recomeçar_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]

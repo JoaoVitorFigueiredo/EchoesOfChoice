@@ -186,6 +186,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PauseMenu" parent="Camera2D" instance=ExtResource("9_ur7pv")]
 visible = false
+z_index = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_g0s4s")
