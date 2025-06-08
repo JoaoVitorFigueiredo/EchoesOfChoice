@@ -1,7 +1,7 @@
 extends Control
 
 var center: Vector2
-@onready var node := $Control2  # O nó visual que vais mover
+@onready var node := $Control2  
 
 func _ready():
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.intro, false)
@@ -10,8 +10,6 @@ func _ready():
 	%Settings.pressed.connect(settings)
 	%Quit.pressed.connect(quit_game)
 	update_center()
-
-	# Garante que se adapta quando a janela muda de tamanho (incluindo fullscreen)
 	get_viewport().size_changed.connect(update_center)
 
 func play():

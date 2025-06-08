@@ -46,13 +46,10 @@ func _physics_process(delta):
 				direction_timer = 0.0
 				direction_index = (direction_index + 1) % directions.size()
 				
-				# Set new velocity in the new direction
 				curr_dir = directions[direction_index]
 				velocity = curr_dir * speed
 
-				# Optionally update the RayCast or any other directional component
 			else:
-				# Stop moving between direction changes
 				velocity = Vector2.ZERO
 			
 
@@ -77,22 +74,22 @@ var last_position
 var idle_time
 
 func _process(delta):
-	# draws the line
+
 	if action == 1:
 		var start = Vector2.ZERO
 		var end = raycast.target_position
 	
-	# Check if enemy moved
+
 	if last_position and position.distance_to(last_position) < 1.0 and action == 1:
 		idle_time += delta
 	else:
 		idle_time = 0.0
 		last_position = position
 
-	# Has it been idle for 8 seconds?
+
 	if idle_time >= 8.0:
 		print("chase ended")
-		action = 3 # End the chase and return to patrol
+		action = 3 
 		
 
 func _on_vision_patrol_body_entered(body: CharacterBody2D) -> void:
@@ -105,19 +102,13 @@ func _on_vision_patrol_body_entered(body: CharacterBody2D) -> void:
 		action = 1
 
 func _on_vision_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
-
+	pass 
 func play_animation(movement):
 	if curr_dir == Vector2.RIGHT:
 		anim.flip_h = false
 	elif curr_dir == Vector2.LEFT:
 		anim.flip_h = true
-	# Optional: handle up/down if you have separate animations
-	# elif curr_dir == Vector2.UP:
-	#     anim.play("walk_up") or use separate animations
-	# elif curr_dir == Vector2.DOWN:
-	#     anim.play("walk_down")
-	
+
 	if movement == 1:
 		anim.play("walk")
 	else:
@@ -130,7 +121,7 @@ func chase():
 		raycast.target_position = player.position - position
 		raycast.force_raycast_update()
 		
-		# Check if there's a clear line of sight
+
 		if not raycast.is_colliding():
 			has_line_of_sight = true
 			last_known_position = player.position
@@ -141,9 +132,9 @@ func chase():
 			target_position = player.position
 		else:
 			target_position = last_known_position
-		# Decide where to move
+
 		var direction = (target_position - position).normalized()
-		velocity = direction * speed  # or whatever speed
+		velocity = direction * speed  
 		play_animation(1)
 	
 	elif can_attack:
@@ -156,16 +147,14 @@ func attack():
 	anim.play("attack")
 	print("Goblin atacando!")
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.knife_slash, false)
-	# Inicia o cooldown imediatamente (independente de sucesso)
 	start_attack_cooldown()
 	
 	velocity.x = 0
 	velocity.y = 0
 
-	# Aguarda o fim da animação
+
 	await anim.animation_finished
 
-	# Verifica se o jogador ainda está por perto para causar dano
 	if player and position.distance_to(player.position) <= attack_range:
 		player.take_damage(attack_damage)
 

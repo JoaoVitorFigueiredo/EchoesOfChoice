@@ -1,17 +1,12 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	if Global.game_first_loadin == true:
-		$player.position.x = Global.player_start_cityx
-		$player.position.y= Global.player_start_cityy
-	else:
-		$player.position.x = Global.player_exit_caverna_ladder_posx
-		$player.position.y= Global.player_exit_caverna_ladder_posy
+	$player.position.x = Global.player_start_cityx
+	$player.position.y= Global.player_start_cityy
+	
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.village_sound, true)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	change_scene()
 

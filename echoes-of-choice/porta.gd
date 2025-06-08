@@ -9,7 +9,7 @@ func _on_tabua_body_entered(body):
 	print("teste")
 	if body is CharacterBody2D and body.is_in_group("player"):
 		var current_scene = Global.current_scene
-		var has_key = Global.keys.get(current_scene)  #obtém o estado da chave para a cena atual
+		var has_key = Global.keys.get(current_scene)  
 		print(has_key)
 		if has_key:
 			print("Chave encontrada. Abrir porta!")

@@ -20,10 +20,8 @@ func _on_cidade_enter_body_exited(body: Node2D) -> void:
 		print("Jogador saiu da saída da caverna.")
 		Global.transition_scene = false
 		
-# Função para mudar de cena
 func change_scene():
 	if Global.transition_scene == true:
-		# Mudar para a cena correta dependendo do destino
 		if Global.target_scene == "cidade":
 			print("Mudando para a cidade (main_scene)...")
 			get_tree().change_scene_to_file("res://scenes/control.tscn")

@@ -11,8 +11,8 @@ var target_scene = ""
 var last_scene = ""
 
 #Posições do jogador ao entrar/sair de cenas
-var player_exit_caverna_ladder_posx = 107
-var player_exit_caverna_ladder_posy = 282
+var player_exit_caverna_ladder_posx = 34
+var player_exit_caverna_ladder_posy = -30
 
 var player_start_caverna_posx = 143
 var player_start_caverna_posy = 114

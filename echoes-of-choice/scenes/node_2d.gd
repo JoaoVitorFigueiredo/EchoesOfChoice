@@ -51,25 +51,23 @@ func start_cutscene():
 		push_error("dialogue_resource não atribuído ao Goblin.")
 
 func positive_karma_intervention() -> void:
-	# Anda para frente
-	var move_duration := 1  # tempo em segundos
-	var move_direction := Vector2.RIGHT  # ou LEFT se quiser inverter
+	var move_duration := 1  
+	var move_direction := Vector2.RIGHT 
 	var start_position = player.position
 	player_anim.play("walk")
 	var elapsed := 0.0
 	
 	while elapsed < move_duration:
-		player.velocity = move_direction * 50  # ajuste a velocidade conforme necessário
+		player.velocity = move_direction * 50  
 		player.move_and_slide()
 		await get_tree().process_frame
 		elapsed += get_process_delta_time()
 
-	# Para de andar
+
 	player.velocity = Vector2.ZERO
 	player.move_and_slide()
 	player_anim.play("attack")
 
-	# Espera até a animação de ataque terminar
 	await player_anim.animation_finished
 	
 	anim_player.play("fadein")
@@ -77,7 +75,6 @@ func positive_karma_intervention() -> void:
 	player.position = start_position
 	k_positivo_anim.visible = true
 	
-	# Mostra o diálogo
 	start_redemption_dialogue()
 
 func start_redemption_dialogue():
@@ -88,8 +85,8 @@ func start_redemption_dialogue():
 		push_error("dialogue_resource não atribuído ao Goblin.")
 	
 func negative_karma_intervention():
-	var move_duration := 1  # tempo em segundos
-	var move_direction := Vector2.LEFT  # ou LEFT se quiser inverter
+	var move_duration := 1  
+	var move_direction := Vector2.LEFT 
 	var start_position = boss.position
 	boss_anim.play("walk")
 	player_anim.flip_h = true
@@ -97,7 +94,7 @@ func negative_karma_intervention():
 	var elapsed := 0.0
 	
 	while elapsed < move_duration:
-		boss.velocity = move_direction * 50  # ajuste a velocidade conforme necessário
+		boss.velocity = move_direction * 50  
 		player.velocity = move_direction * 45
 		
 		boss.move_and_slide()
@@ -106,13 +103,11 @@ func negative_karma_intervention():
 		elapsed += get_process_delta_time()
 	
 	
-	# Para de andar
 	
 	boss.velocity = Vector2.ZERO
 	boss.move_and_slide()
 	boss_anim.play("attack")
 
-	# Espera até a animação de ataque terminar
 	await boss_anim.animation_finished
 	player.velocity = Vector2.ZERO
 	player.move_and_slide()
@@ -138,7 +133,7 @@ func hide_scene():
 	anim_player.play("fadein")
 	
 func move_karma_negativo():
-	var move_direction := Vector2.LEFT  # ou LEFT se quiser inverter
+	var move_direction := Vector2.LEFT  
 	k_negativo_anim.flip_h = true
 	k_negativo.velocity = move_direction * 15
 	var move_duration := 0.5

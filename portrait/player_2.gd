@@ -1,19 +1,11 @@
 extends CharacterBody2D
 
 var curr_dir = "none"
-var speed =200
+var speed =300
 var is_chased = false
 var n_chased = 0
-
-<<<<<<< Updated upstream
-func _process(delta):
-=======
-
-
-
-var speed 
-
-@onready var karma_bar = $Camera2D/CanvasLayer/KarmaBar
+var health = 100
+var max_health = 100
 
 
 @export var knife_damage := 10
@@ -27,22 +19,9 @@ func _ready():
 	knife_area.monitoring = false
 	AudioManager.create_audio(SoundEffect.SOUND_EFFECT_TYPE.walk_sound, true)
 	animation_player.animation_finished.connect(_on_animation_finished)
-	health_bar.value = PlayerVars.health
+	max_health = health
 
 var is_attacking = false
-	
-		
-@onready var pause_menu = $Camera2D/PauseMenu
-var paused = false
-
-func pauseMenu():
-	if paused:
-		pause_menu.hide()
-		Engine.time_scale = 1
-	else:
-		pause_menu.show()
-		Engine.time_scale = 0
-	paused = !paused
 
 func attack():
 	if is_attacking:
@@ -62,23 +41,29 @@ func _on_knife_hit(area: Area2D):
 		else:
 			enemy_hit.take_damage(knife_damage)
 
-
-
 func _on_animation_finished():
 	if animation_player.animation == "attack":
+		print("attack end")
 		knife_area.monitoring = false
 		is_attacking = false
 
 func take_damage(amount: int):
-	PlayerVars.health -= amount
-	print("Jogador levou", amount, "de dano. Vida restante:", PlayerVars.health)
-	health_bar.value = PlayerVars.health * 100 / PlayerVars.max_health
-	if PlayerVars.health <= 0:
+	health -= amount
+	print("Jogador levou", amount, "de dano. Vida restante:", health)
+	health_bar.value = health * 100 / max_health
+	if health <= 0:
 		die()
+
+@onready var karma_bar = $Camera2D/CanvasLayer/KarmaBar
+var karma = 50
+
+func change_karma(amount:int):
+	karma += amount
+	karma_bar.value = karma
 
 func die():
 	print("Jogador morreu")
-	
+	# Adiciona lógica de game over ou respawn aqui
 
 func player():
 	pass
@@ -91,28 +76,18 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 
 func _process(delta):
-	karma_bar.value = PlayerVars.karma
-	if Input.is_action_just_pressed("pause"):
-			pauseMenu()
-	
->>>>>>> Stashed changes
 	if is_chased and n_chased == 0:
 		is_chased = false
 	elif !is_chased and n_chased > 0:
 		is_chased = true
+	if Input.is_action_just_pressed("attack"):
+			attack()
 
 func _physics_process(delta):
 	player_movement(delta)
 
 func player_movement(delta):
-<<<<<<< Updated upstream
-	if Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_up"):
-		curr_dir = "right"
-		play_animation(1)
-		velocity.x = speed*.75
-		velocity.y = -speed*.75
-=======
-	if not is_attacking and PlayerVars.can_move:
+	if not is_attacking:
 		if Input.is_action_pressed("move_right") and Input.is_action_pressed("move_up"):
 			curr_dir = "right"
 			play_animation(1)
@@ -124,47 +99,45 @@ func player_movement(delta):
 			play_animation(1)
 			velocity.x = speed*.75
 			velocity.y = speed*.75
->>>>>>> Stashed changes
 		
-	elif Input.is_action_pressed("ui_right") and Input.is_action_pressed("ui_down"):
-		curr_dir = "right"
-		play_animation(1)
-		velocity.x = speed*.75
-		velocity.y = speed*.75
-	
-	elif Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_down"):
-		curr_dir = "left"
-		play_animation(1)
-		velocity.x = -speed*.75
-		velocity.y = speed*.75
+		elif Input.is_action_pressed("move_left") and Input.is_action_pressed("move_down"):
+			curr_dir = "left"
+			play_animation(1)
+			velocity.x = -speed*.75
+			velocity.y = speed*.75
+			
+		elif Input.is_action_pressed("move_left") and Input.is_action_pressed("move_up"):
+			curr_dir = "left"
+			play_animation(1)
+			velocity.x = -speed*.75
+			velocity.y = -speed*.75
+			
+		elif Input.is_action_pressed("move_right"):
+			curr_dir = "right"
+			play_animation(1)
+			velocity.x = speed
+			velocity.y = 0
+		elif Input.is_action_pressed("move_left"):
+			curr_dir = "left"
+			play_animation(1)
+			velocity.x = -speed
+			velocity.y = 0
+		elif Input.is_action_pressed("move_down"):
+			play_animation(1)
+			velocity.x = 0
+			velocity.y = speed
+		elif Input.is_action_pressed("move_up"):
+			play_animation(1)
+			velocity.x = 0
+			velocity.y = -speed
 		
-	elif Input.is_action_pressed("ui_left") and Input.is_action_pressed("ui_up"):
-		curr_dir = "left"
-		play_animation(1)
-		velocity.x = -speed*.75
-		velocity.y = -speed*.75
-		
-	elif Input.is_action_pressed("ui_right"):
-		curr_dir = "right"
-		play_animation(1)
-		velocity.x = speed
-		velocity.y = 0
-	elif Input.is_action_pressed("ui_left"):
-		curr_dir = "left"
-		play_animation(1)
-		velocity.x = -speed
-		velocity.y = 0
-	elif Input.is_action_pressed("ui_down"):
-		play_animation(1)
-		velocity.x = 0
-		velocity.y = speed
-	elif Input.is_action_pressed("ui_up"):
-		play_animation(1)
-		velocity.x = 0
-		velocity.y = -speed
-	
-	else:
-		play_animation(0)
+		else:
+				play_animation(0)
+				velocity.x = 0
+				velocity.y = 0
+		var angle = velocity.angle()
+		knife_area.rotation = angle
+	else: 
 		velocity.x = 0
 		velocity.y = 0
 		
@@ -172,19 +145,21 @@ func player_movement(delta):
 
 
 func play_animation(movement):
+	if is_attacking:
+		return  # Não muda animação se estiver a atacar
 	var dir = curr_dir
-	var anim =$AnimatedSprite2D
 	
 	if dir == "right":
-		anim.flip_h = false
+		animation_player.flip_h = false
 		if movement == 1:
-			anim.play("walk")
+			animation_player.play("walk")
 		elif movement == 0:
-			anim.play("idle")
+			animation_player.play("idle")
 			
 	else:
-		anim.flip_h = true
+		animation_player.flip_h = true
 		if movement == 1:
-			anim.play("walk")
+			animation_player.play("walk")
 		elif movement == 0:
-			anim.play("idle")
+			animation_player.play("idle")
+			

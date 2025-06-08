@@ -9,22 +9,17 @@ var tween: Tween
 func _ready():
 	update_center()
 
-	# Conectar eventos
 	button_voltar.pressed.connect(voltar)
 	slider_volume.value_changed.connect(on_volume_changed)
 
-	# Adaptação à janela
 	get_viewport().size_changed.connect(update_center)
-
-
-	# Carregar definições anteriores
 	load_settings()
 
 func _process(_delta):
 	if not tween or not tween.is_running():
 		var offset = center - get_global_mouse_position() * 0.1
 		if tween:
-			tween.kill()  # Para garantir que o anterior é removido
+			tween.kill() 
 		tween = create_tween()
 		tween.tween_property(node, "position", offset, 1.0)
 

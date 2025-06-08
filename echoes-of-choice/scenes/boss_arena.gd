@@ -8,7 +8,6 @@ func _process(delta):
 	change_scene()
 	
 
-# Quando o jogador entra na saída da arena (de volta para a caverna)
 func _on_caverna_exit_point_body_entered(body):
 	if body.has_method("player") and body.is_in_group("player"):
 		print("Jogador entrou na saída da arena.")
