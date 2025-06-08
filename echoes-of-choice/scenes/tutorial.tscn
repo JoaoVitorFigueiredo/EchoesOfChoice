@@ -19,6 +19,7 @@ size = Vector2(30, 22.75)
 size = Vector2(171, 134)
 
 [node name="Node2D" type="Node2D"]
+modulate = Color(0.732394, 0.706433, 0.695244, 1)
 script = ExtResource("1_g2equ")
 
 [node name="TileMap" type="TileMap" parent="."]

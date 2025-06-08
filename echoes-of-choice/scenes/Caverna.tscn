@@ -15,6 +15,7 @@
 size = Vector2(20, 18)
 
 [node name="Caverna" type="Node2D"]
+modulate = Color(0.733333, 0.705882, 0.694118, 1)
 script = ExtResource("1_v0en2")
 
 [node name="TileMap" type="TileMap" parent="."]

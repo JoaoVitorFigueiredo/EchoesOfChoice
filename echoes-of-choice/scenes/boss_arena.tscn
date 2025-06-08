@@ -127,6 +127,7 @@ size = Vector2(64, 71)
 points = PackedVector2Array(-11, -13, 93, -46, 93, 49, -12, 10)
 
 [node name="boss" type="Node2D"]
+modulate = Color(0.733333, 0.705882, 0.694118, 1)
 script = ExtResource("1_mege2")
 
 [node name="TileMap" type="TileMap" parent="."]
