@@ -31,4 +31,6 @@ do CutsceneFinal.hide_scene()
 
 : Shadow permanece parado, respirando fundo, de punho cerrado, encarando os olhos vermelhos na escuridão.
 
+do get_tree().change_scene_to_file("res://scenes/fim.tscn")
+
 => END
