@@ -15,7 +15,7 @@
 [ext_resource type="Resource" uid="uid://boa2th1l4g5qw" path="res://dialogos/casa_shadow.dialogue" id="11_si52b"]
 [ext_resource type="PackedScene" uid="uid://bmsq1af3dh686" path="res://porta.tscn" id="12_mngbo"]
 [ext_resource type="PackedScene" uid="uid://gv1afxjcfkpv" path="res://scenes/Prefeito.tscn" id="13_4w45t"]
-[ext_resource type="PackedScene" path="res://scenes/cidadao.tscn" id="16_01n6w"]
+[ext_resource type="PackedScene" uid="uid://b61j5k1f4ikf0" path="res://scenes/cidadao.tscn" id="16_01n6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqfj4"]
 size = Vector2(14, 12.5)
@@ -86,6 +86,7 @@ dialogue_start = ""
 interaction_text = "Ouvir Narrador"
 
 [node name="panel_botão" parent="intro_action" instance=ExtResource("8_18nlu")]
+z_index = 1
 offset_left = -228.0
 offset_top = -66.0
 offset_right = -228.0
@@ -104,6 +105,7 @@ dialogue_start = ""
 interaction_text = "Falar com o prefeito"
 
 [node name="panel_botão" parent="intro_action2" instance=ExtResource("8_18nlu")]
+z_index = 1
 offset_left = 971.0
 offset_top = 71.0
 offset_right = 971.0
@@ -122,6 +124,7 @@ dialogue_start = ""
 interaction_text = "Casa trancada"
 
 [node name="panel_botão" parent="intro_action5" instance=ExtResource("8_18nlu")]
+z_index = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -145,6 +148,7 @@ dialogue_start = ""
 interaction_text = "Casa do Shadow"
 
 [node name="panel_botão" parent="intro_action6" instance=ExtResource("8_18nlu")]
+z_index = 1
 offset_left = 562.0
 offset_top = 284.0
 offset_right = 562.0
@@ -163,6 +167,7 @@ dialogue_start = ""
 interaction_text = "Encontrei a chave"
 
 [node name="panel_botão" parent="intro_action3" instance=ExtResource("8_18nlu")]
+z_index = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -186,6 +191,7 @@ dialogue_start = ""
 interaction_text = "Cheguei a entrada"
 
 [node name="panel_botão" parent="intro_action4" instance=ExtResource("8_18nlu")]
+z_index = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://y21r15n5e0nk"]
+
+[ext_resource type="Texture2D" uid="uid://cqhmsj6yxg0ry" path="res://portrait/You Died.jpg" id="1_0hhgj"]
+[ext_resource type="Script" uid="uid://defdnlr7344i6" path="res://scenes/texture_rect.gd" id="2_w8wr1"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 768.0
+texture = ExtResource("1_0hhgj")
+script = ExtResource("2_w8wr1")

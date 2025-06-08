@@ -7,16 +7,6 @@ func _process(delta):
 	change_scene()
 	
 
-@onready var pause_menu := $PauseMenu  
-
-func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel"):  
-		if not get_tree().paused:
-			pause_menu.show_pause_menu()
-		else:
-			pause_menu.hide_pause_menu()
-
-
 
 func _on_cidade_enter_body_entered(body: Node2D) -> void:
 	if body.has_method("player") and body.is_in_group("player"):

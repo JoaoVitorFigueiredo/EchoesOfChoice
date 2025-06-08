@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://dl7j3krgdcw84" path="res://new_theme.tres" id="2_gmq62"]
 
 [node name="panel_botão" type="Control"]
+z_index = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
